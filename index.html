@@ -1,24 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<title>bvunt.site</title>
+<title>killez.site</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg: #0d080f;
-  --card: #130d16;
-  --border: #ff8eb820;
-  --accent: #ff6eb4;
-  --accent2: #ffb3d9;
-  --text: #fdf0f7;
-  --muted: #c9a0bc;
-  --btn-bg: #1c0f1e;
-  --btn-hover: #271428;
+  --bg: #0a0f1a;
+  --card: #0e1422;
+  --border: #3b82f620;
+  --accent: #3b82f6;
+  --accent2: #60a5fa;
+  --text: #f0f4ff;
+  --muted: #94a3b8;
+  --btn-bg: #111827;
+  --btn-hover: #1e293b;
 }
 
 html {
@@ -53,18 +52,18 @@ body.is-desktop button { cursor: none !important; }
   width: 100%; height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
 .bg-orb { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; }
-.orb1 { width: 600px; height: 600px; top: -200px; left: -180px; background: radial-gradient(circle, #ff6eb430 0%, transparent 65%); }
-.orb2 { width: 500px; height: 500px; bottom: -150px; right: -150px; background: radial-gradient(circle, #e040a030 0%, transparent 65%); }
-.orb3 { width: 300px; height: 300px; top: 40%; left: 60%; background: radial-gradient(circle, #ffb3d915 0%, transparent 70%); }
+.orb1 { width: 600px; height: 600px; top: -200px; left: -180px; background: radial-gradient(circle, #3b82f630 0%, transparent 65%); }
+.orb2 { width: 500px; height: 500px; bottom: -150px; right: -150px; background: radial-gradient(circle, #2563eb30 0%, transparent 65%); }
+.orb3 { width: 300px; height: 300px; top: 40%; left: 60%; background: radial-gradient(circle, #60a5fa15 0%, transparent 70%); }
 
 /* ENTER SCREEN */
 #enter-screen {
   position: fixed; inset: 0; z-index: 100;
-  background: #0d080f;
+  background: #0a0f1a;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 2rem;
   transition: opacity 0.8s ease, visibility 0.8s ease;
@@ -73,19 +72,19 @@ body.is-desktop button { cursor: none !important; }
 
 .enter-logo {
   font-size: 3rem; font-weight: 800;
-  background: linear-gradient(135deg, #ff6eb4, #ffb3d9, #e040a0);
+  background: linear-gradient(135deg, #3b82f6, #60a5fa, #2563eb);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: epulse 2s ease-in-out infinite;
 }
 @keyframes epulse {
-  0%, 100% { filter: drop-shadow(0 0 10px #ff6eb460); }
-  50%       { filter: drop-shadow(0 0 32px #ff6eb4cc); }
+  0%, 100% { filter: drop-shadow(0 0 10px #3b82f660); }
+  50%       { filter: drop-shadow(0 0 32px #3b82f6cc); }
 }
 
 .enter-btn {
   background: transparent;
-  border: 1px solid #ff6eb450;
+  border: 1px solid #3b82f650;
   border-radius: 99px;
   padding: 14px 44px;
   color: var(--text);
@@ -97,9 +96,9 @@ body.is-desktop button { cursor: none !important; }
   touch-action: manipulation;
 }
 .enter-btn:hover, .enter-btn:active {
-  border-color: #ff6eb4;
+  border-color: #3b82f6;
   transform: scale(1.05);
-  box-shadow: 0 0 28px #ff6eb430;
+  box-shadow: 0 0 28px #3b82f630;
 }
 
 .enter-sub {
@@ -128,14 +127,14 @@ body.is-desktop button { cursor: none !important; }
 
 /* CARD */
 .card {
-  background: linear-gradient(160deg, #1a0d1e 0%, #130d16 50%, #160a18 100%);
-  border: 1px solid #ff6eb420;
+  background: linear-gradient(160deg, #111827 0%, #0e1422 50%, #0a0f1a 100%);
+  border: 1px solid #3b82f620;
   border-radius: 24px;
   padding: 2.4rem 2.6rem;
   text-align: center;
   position: relative;
   transform-style: preserve-3d;
-  box-shadow: 0 20px 70px #00000080, 0 2px 0 #ff6eb410 inset;
+  box-shadow: 0 20px 70px #00000080, 0 2px 0 #3b82f610 inset;
   transition: box-shadow 0.4s ease;
   overflow: visible;
   -webkit-tap-highlight-color: transparent;
@@ -215,12 +214,12 @@ body.is-desktop button { cursor: none !important; }
 }
 
 .card.glow {
-  box-shadow: 0 0 60px #ff6eb428, 0 0 120px #e040a012,
-              0 20px 70px #00000080, 0 2px 0 #ff6eb410 inset;
+  box-shadow: 0 0 60px #3b82f628, 0 0 120px #2563eb12,
+              0 20px 70px #00000080, 0 2px 0 #3b82f610 inset;
 }
 
-.card-depth  { position: absolute; inset: 0; border-radius: 24px; transform: translateZ(-8px) scale(1.02); border: 1px solid #ff6eb418; pointer-events: none; }
-.card-depth2 { position: absolute; inset: 0; border-radius: 24px; transform: translateZ(-16px) scale(1.04); border: 1px solid #e040a010; pointer-events: none; }
+.card-depth  { position: absolute; inset: 0; border-radius: 24px; transform: translateZ(-8px) scale(1.02); border: 1px solid #3b82f618; pointer-events: none; }
+.card-depth2 { position: absolute; inset: 0; border-radius: 24px; transform: translateZ(-16px) scale(1.04); border: 1px solid #2563eb10; pointer-events: none; }
 
 /* VOLUME CONTROL */
 .volume-ctrl {
@@ -228,8 +227,8 @@ body.is-desktop button { cursor: none !important; }
   top: 20px; right: 24px;
   display: flex; align-items: center; gap: 7px;
   z-index: 200;
-  background: #130d16cc;
-  border: 1px solid #ff6eb430;
+  background: #0e1422cc;
+  border: 1px solid #3b82f630;
   border-radius: 99px;
   padding: 7px 14px;
   backdrop-filter: blur(10px);
@@ -249,7 +248,7 @@ body.is-desktop button { cursor: none !important; }
   appearance: none;
   width: 72px; height: 3px;
   border-radius: 99px;
-  background: linear-gradient(to right, #ff6eb4 var(--val, 80%), #ffffff18 var(--val, 80%));
+  background: linear-gradient(to right, #3b82f6 var(--val, 80%), #ffffff18 var(--val, 80%));
   outline: none;
   touch-action: none;
 }
@@ -257,15 +256,15 @@ body.is-desktop button { cursor: none !important; }
   -webkit-appearance: none;
   width: 14px; height: 14px;
   border-radius: 50%;
-  background: #ff6eb4;
-  box-shadow: 0 0 6px #ff6eb470;
+  background: #3b82f6;
+  box-shadow: 0 0 6px #3b82f670;
 }
 .vol-slider::-moz-range-thumb {
   width: 14px; height: 14px;
   border-radius: 50%;
-  background: #ff6eb4;
+  background: #3b82f6;
   border: none;
-  box-shadow: 0 0 6px #ff6eb470;
+  box-shadow: 0 0 6px #3b82f670;
 }
 
 /* AVATAR */
@@ -274,19 +273,19 @@ body.is-desktop button { cursor: none !important; }
   width: 88px; height: 88px; border-radius: 50%;
   border: 2px solid var(--accent);
   object-fit: cover;
-  box-shadow: 0 0 28px #ff6eb455;
+  box-shadow: 0 0 28px #3b82f655;
   display: block;
 }
 .status-dot {
   position: absolute; bottom: 4px; right: 4px;
   width: 15px; height: 15px; border-radius: 50%;
-  background: #f472b6; border: 2px solid var(--card);
-  box-shadow: 0 0 10px #f472b680;
+  background: #3b82f6; border: 2px solid var(--card);
+  box-shadow: 0 0 10px #3b82f680;
 }
 
 .username {
   font-size: 1.65rem; font-weight: 800; display: block;
-  color: #ff6eb4;
+  color: #3b82f6;
   margin-bottom: 0.25rem;
   transform: translateZ(15px);
   min-height: 2rem;
@@ -294,7 +293,7 @@ body.is-desktop button { cursor: none !important; }
 }
 .username .name-cursor {
   display: inline-block; width: 2px; height: 1em;
-  background: #ff6eb4;
+  background: #3b82f6;
   margin-left: 2px; vertical-align: middle;
   animation: blink 0.8s step-end infinite;
 }
@@ -304,7 +303,7 @@ body.is-desktop button { cursor: none !important; }
 .bio {
   font-size: 1rem; font-weight: 700; line-height: 1.6;
   margin-bottom: 1.2rem; padding: 0 0.4rem; min-height: 1.8rem;
-  background: linear-gradient(90deg, #ff6eb4, #ffb3d9, #e040a0, #ff9fd3);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #2563eb, #3b82f6);
   background-size: 200% auto;
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -316,7 +315,7 @@ body.is-desktop button { cursor: none !important; }
 }
 .bio .cursor {
   display: inline-block; width: 2px; height: 1em;
-  background: #ff6eb4 !important;
+  background: #3b82f6 !important;
   margin-left: 2px; vertical-align: middle;
   animation: blink 0.8s step-end infinite;
   -webkit-text-fill-color: initial;
@@ -328,18 +327,18 @@ body.is-desktop button { cursor: none !important; }
 .badge {
   font-family: 'DM Mono', monospace; font-size: 0.65rem;
   padding: 3px 10px; border-radius: 99px;
-  border: 1px solid #ff6eb420; color: var(--muted); background: var(--btn-bg);
+  border: 1px solid #3b82f620; color: var(--muted); background: var(--btn-bg);
 }
 .badge.special {
-  border-color: #ff6eb440; color: #ffb3d9;
-  background: linear-gradient(135deg, #ff6eb412, #e040a008);
+  border-color: #3b82f640; color: #60a5fa;
+  background: linear-gradient(135deg, #3b82f612, #2563eb08);
 }
 
-.divider { height: 1px; background: linear-gradient(90deg, transparent, #ff6eb425, transparent); margin: 1rem 0; }
+.divider { height: 1px; background: linear-gradient(90deg, transparent, #3b82f625, transparent); margin: 1rem 0; }
 
 /* SPOTIFY BAR */
 .spotify-bar {
-  background: #0d0810; border: 1px solid #ff6eb430;
+  background: #0a0f1a; border: 1px solid #3b82f630;
   border-radius: 14px; padding: 12px 14px; margin-bottom: 1rem;
   display: flex; align-items: center; gap: 12px;
   transform: translateZ(6px);
@@ -347,8 +346,8 @@ body.is-desktop button { cursor: none !important; }
 
 .sp-art {
   width: 42px; height: 42px; border-radius: 8px;
-  background: linear-gradient(135deg, #2a1a2e, #1a0d1e);
-  border: 1px solid #ff6eb420;
+  background: linear-gradient(135deg, #1e293b, #111827);
+  border: 1px solid #3b82f620;
   flex-shrink: 0; display: flex; align-items: center; justify-content: center;
   font-size: 18px; overflow: hidden; position: relative;
 }
@@ -362,8 +361,8 @@ body.is-desktop button { cursor: none !important; }
 .sp-info { flex: 1; text-align: left; overflow: hidden; }
 .sp-title  { font-size: 0.82rem; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sp-artist { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); }
-.sp-label  { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: #ff6eb4; margin-bottom: 2px; display: flex; align-items: center; gap: 4px; }
-.sp-dot    { width: 6px; height: 6px; border-radius: 50%; background: #ff6eb4; animation: spdot 1.5s ease infinite; flex-shrink: 0; }
+.sp-label  { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: #3b82f6; margin-bottom: 2px; display: flex; align-items: center; gap: 4px; }
+.sp-dot    { width: 6px; height: 6px; border-radius: 50%; background: #3b82f6; animation: spdot 1.5s ease infinite; flex-shrink: 0; }
 @keyframes spdot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.6); } }
 
 .sp-progress-wrap {
@@ -389,7 +388,7 @@ body.is-desktop button { cursor: none !important; }
 }
 .sp-fill {
   height: 100%;
-  background: linear-gradient(90deg, #ff6eb4, #ffb3d9);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
   border-radius: 99px; width: 0%;
   transition: width 0.3s linear;
   pointer-events: none;
@@ -402,7 +401,7 @@ body.is-desktop button { cursor: none !important; }
   background: #fff; transform: translateY(-50%) scale(0);
   transition: transform 0.15s ease;
   pointer-events: none;
-  box-shadow: 0 0 6px #ff6eb480;
+  box-shadow: 0 0 6px #3b82f680;
 }
 .sp-progress:hover .sp-thumb,
 .sp-progress.dragging .sp-thumb { transform: translateY(-50%) scale(1); }
@@ -427,12 +426,12 @@ body.is-desktop button { cursor: none !important; }
 
 .sp-btn.play {
   width: 36px; height: 36px; border-radius: 50%;
-  background: linear-gradient(135deg, #ff6eb4, #e040a0); color: #fff;
+  background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff;
   padding: 0;
 }
 .sp-btn.play svg { width: 16px; height: 16px; }
 .sp-btn.play:hover, .sp-btn.play:active {
-  background: linear-gradient(135deg, #ffb3d9, #ff6eb4);
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
   transform: scale(1.1);
 }
 
@@ -447,7 +446,7 @@ body.is-desktop button { cursor: none !important; }
 .icon-btn {
   display: flex; align-items: center; justify-content: center;
   width: 48px; height: 48px; border-radius: 14px;
-  background: var(--btn-bg); border: 1px solid #ff6eb420;
+  background: var(--btn-bg); border: 1px solid #3b82f620;
   color: var(--muted); text-decoration: none; font-size: 20px;
   transition: background 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s, color 0.2s;
   position: relative;
@@ -458,14 +457,14 @@ body.is-desktop button { cursor: none !important; }
 .icon-btn .tip { display: none; }
 .icon-btn svg { width: 20px; height: 20px; display: block; flex-shrink: 0; fill: currentColor; }
 .icon-btn:hover, .icon-btn:active {
-  background: var(--btn-hover); border-color: #ff6eb455; color: #ffb3d9;
-  transform: translateY(-3px) scale(1.08); box-shadow: 0 6px 22px #ff6eb425;
+  background: var(--btn-hover); border-color: #3b82f655; color: #60a5fa;
+  transform: translateY(-3px) scale(1.08); box-shadow: 0 6px 22px #3b82f625;
 }
 
 /* Tooltip — desktop only */
 #floating-tip {
   position: fixed;
-  background: #1c0f1e; border: 1px solid #ff6eb430;
+  background: #111827; border: 1px solid #3b82f630;
   color: var(--muted); font-family: 'DM Mono', monospace;
   font-size: 0.62rem; white-space: nowrap;
   padding: 4px 10px; border-radius: 6px;
@@ -486,18 +485,18 @@ body.is-desktop #cursor-ring { display: block; }
 #cursor-dot {
   position: fixed; top: 0; left: 0;
   width: 10px; height: 10px; border-radius: 50%;
-  background: #ff6eb4; pointer-events: none; z-index: 99999;
+  background: #3b82f6; pointer-events: none; z-index: 99999;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px #ff6eb4, 0 0 22px #ff6eb480;
+  box-shadow: 0 0 10px #3b82f6, 0 0 22px #3b82f680;
   transition: transform 0.05s, width 0.2s, height 0.2s;
   mix-blend-mode: screen;
 }
 #cursor-ring {
   position: fixed; top: 0; left: 0;
   width: 36px; height: 36px; border-radius: 50%;
-  border: 1.5px solid #ff6eb480; pointer-events: none; z-index: 99998;
+  border: 1.5px solid #3b82f680; pointer-events: none; z-index: 99998;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 8px #ff6eb440;
+  box-shadow: 0 0 8px #3b82f640;
   transition: width 0.2s, height 0.2s, border-color 0.2s, opacity 0.2s;
 }
 
@@ -537,9 +536,9 @@ body.is-desktop .trail-dot { display: block; }
 <div id="enter-screen">
   <div class="bg-orb orb1"></div>
   <div class="bg-orb orb2"></div>
-  <div class="enter-logo">bvunt</div>
+  <div class="enter-logo">killez</div>
   <button class="enter-btn" id="enter-btn">CLICK TO ENTER</button>
-  <p class="enter-sub">bvunt.site</p>
+  <p class="enter-sub">killez.site</p>
 </div>
 
 <div class="volume-ctrl">
@@ -564,11 +563,11 @@ body.is-desktop .trail-dot { display: block; }
     </div>
 
     <span class="username" id="username"><span class="name-cursor"></span></span>
-    <p class="handle">@bvunt</p>
+    <p class="handle">@killez</p>
     <p class="bio" id="bio"><span class="cursor"></span></p>
 
     <div class="badges">
-      <span class="badge">♡ dev</span>
+      <span class="badge">💙 dev</span>
       <span class="badge">✦ currently learning rust</span>
     </div>
 
@@ -631,7 +630,7 @@ body.is-desktop .trail-dot { display: block; }
 </a>
     </div>
 
-    <p class="views">✦ bvunt.site</p>
+    <p class="views">✦ killez.site</p>
   </div>
 </div>
 
@@ -677,9 +676,9 @@ document.body.classList.add(isMobile ? 'is-mobile' : 'is-desktop');
     drops.forEach(d => {
       const dx = Math.sin(d.angle) * d.len, dy = Math.cos(d.angle) * d.len;
       const grad = ctx.createLinearGradient(d.x, d.y, d.x + dx, d.y + dy);
-      grad.addColorStop(0, `rgba(255, 110, 180, 0)`);
-      grad.addColorStop(0.5, `rgba(255, 200, 230, ${d.opacity * 0.7})`);
-      grad.addColorStop(1, `rgba(255, 255, 255, ${d.opacity})`);
+      grad.addColorStop(0, `rgba(59, 130, 246, 0)`);
+      grad.addColorStop(0.5, `rgba(96, 165, 250, ${d.opacity * 0.7})`);
+      grad.addColorStop(1, `rgba(59, 130, 246, ${d.opacity})`);
       ctx.beginPath(); ctx.moveTo(d.x, d.y); ctx.lineTo(d.x + dx, d.y + dy);
       ctx.strokeStyle = grad; ctx.lineWidth = d.width; ctx.lineCap = 'round'; ctx.stroke();
       d.x += d.speed * Math.sin(d.angle); d.y += d.speed;
@@ -690,7 +689,7 @@ document.body.classList.add(isMobile ? 'is-mobile' : 'is-desktop');
     for (let i = splashes.length - 1; i >= 0; i--) {
       const s = splashes[i];
       ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 180, 220, ${s.life * 0.5})`; ctx.fill();
+      ctx.fillStyle = `rgba(59, 130, 246, ${s.life * 0.5})`; ctx.fill();
       s.x += s.vx; s.y += s.vy; s.vy += 0.12; s.life -= s.decay;
       if (s.life <= 0) splashes.splice(i, 1);
     }
@@ -840,7 +839,7 @@ window.addEventListener('touchend', () => {
 });
 
 const usernameEl = document.getElementById('username');
-const NAME = 'bvunt';
+const NAME = 'killez';
 function typeUsername() {
   const cursor = usernameEl.querySelector('.name-cursor') || (() => { const c = document.createElement('span'); c.className = 'name-cursor'; return c; })();
   let i = 0;
@@ -891,7 +890,7 @@ function applyTilt(rx, ry) {
   wrapper.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
   const sx = ry * 1.2, sy = -rx * 1.2;
   card.style.boxShadow = card.classList.contains('glow')
-    ? `${sx}px ${sy + 20}px 60px #00000080, 0 0 60px #ff6eb428`
+    ? `${sx}px ${sy + 20}px 60px #00000080, 0 0 60px #3b82f628`
     : `${sx}px ${sy + 20}px 60px #00000080`;
 }
 
@@ -899,7 +898,7 @@ function resetTilt() {
   wrapper.classList.remove('tilting');
   wrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
   card.style.boxShadow = card.classList.contains('glow')
-    ? '0 0 60px #ff6eb428, 0 0 120px #e040a012, 0 20px 70px #00000080'
+    ? '0 0 60px #3b82f628, 0 0 120px #2563eb12, 0 20px 70px #00000080'
     : '0 20px 70px #00000080';
 }
 
@@ -966,7 +965,7 @@ function spawnSparks(cx, cy) {
     const dist = 30 + Math.random() * 45;
     s.style.left = cx + 'px'; s.style.top = cy + 'px';
     s.style.setProperty('--tx', `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist}px)`);
-    s.style.background = i % 2 === 0 ? '#ff6eb4' : '#ffb3d9';
+    s.style.background = i % 2 === 0 ? '#3b82f6' : '#60a5fa';
     s.style.animationDelay = (Math.random() * 0.1) + 's';
     document.body.appendChild(s);
     setTimeout(() => s.remove(), 700);
@@ -989,8 +988,8 @@ if (!isMobile) {
     const size = Math.round(8 * t);
     d.style.width  = size + 'px'; d.style.height = size + 'px';
     d.style.opacity = (t * 0.6).toFixed(2);
-    d.style.background = `hsl(${330 + i * 2}, 90%, ${70 + i}%)`;
-    d.style.boxShadow  = `0 0 ${Math.round(6 * t)}px hsl(${330 + i * 2}, 90%, 75%)`;
+    d.style.background = `hsl(${210 + i * 2}, 90%, ${70 + i}%)`;
+    d.style.boxShadow  = `0 0 ${Math.round(6 * t)}px hsl(${210 + i * 2}, 90%, 75%)`;
     document.body.appendChild(d);
     trail.push({ el: d, x: 0, y: 0 });
   }
@@ -1004,12 +1003,12 @@ if (!isMobile) {
     el.addEventListener('mouseenter', () => {
       dot.style.width = '6px'; dot.style.height = '6px';
       ring.style.width = '52px'; ring.style.height = '52px';
-      ring.style.borderColor = '#ff6eb4'; ring.style.boxShadow = '0 0 18px #ff6eb460';
+      ring.style.borderColor = '#3b82f6'; ring.style.boxShadow = '0 0 18px #3b82f660';
     });
     el.addEventListener('mouseleave', () => {
       dot.style.width = '10px'; dot.style.height = '10px';
       ring.style.width = '36px'; ring.style.height = '36px';
-      ring.style.borderColor = '#ff6eb480'; ring.style.boxShadow = '0 0 8px #ff6eb440';
+      ring.style.borderColor = '#3b82f680'; ring.style.boxShadow = '0 0 8px #3b82f640';
     });
   });
 
