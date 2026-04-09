@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>KILLEZ | SPOTIFY RITUAL · Crimson Nexus</title>
-    <!-- Google Fonts + premium icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>KILLEZ | BLACK TYPOGRAPHY · Looping Typewriter</title>
+    <!-- Premium Modern Fonts - Better Looking Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -15,130 +15,139 @@
         }
 
         body {
-            background: #020001;
-            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            background: #000000;
+            font-family: 'Syne', 'Space Grotesk', 'Inter', sans-serif;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
         }
 
-        /* ---------- SPLASH SCREEN (pre-loader with button) ---------- */
+        /* ---------- SPLASH SCREEN (black premium) ---------- */
         .splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 50% 40%, #1a0106, #000000);
+            background: #000000;
             z-index: 9999;
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(8px);
-            transition: opacity 1.2s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            backdrop-filter: blur(0px);
+            transition: opacity 1.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
             opacity: 1;
             pointer-events: auto;
         }
         .splash-content {
             text-align: center;
-            max-width: 480px;
-            padding: 2rem;
-            background: rgba(10, 2, 5, 0.7);
-            backdrop-filter: blur(20px);
+            max-width: 520px;
+            padding: 2.5rem;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(24px);
             border-radius: 3rem;
-            border: 1px solid rgba(255, 70, 100, 0.6);
-            box-shadow: 0 30px 50px -20px black, 0 0 30px rgba(180, 20, 50, 0.4);
-            animation: floatGlow 2s infinite alternate;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 40px 70px -25px rgba(0,0,0,0.8), 0 0 0 1px rgba(255, 255, 255, 0.03);
+            animation: floatEntrance 1.2s ease-out;
         }
-        @keyframes floatGlow {
-            0% { transform: translateY(0px); box-shadow: 0 30px 50px -20px black; }
-            100% { transform: translateY(-8px); box-shadow: 0 40px 60px -15px #b81a2e40; }
+        @keyframes floatEntrance {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
         .splash-logo {
-            font-size: 5rem;
-            color: #ff4d6d;
+            font-size: 5.5rem;
+            color: #ffffff;
             margin-bottom: 1rem;
-            text-shadow: 0 0 20px #ff1a3a;
+            text-shadow: 0 0 30px rgba(255,255,255,0.2);
+            animation: pulseWhite 2s infinite;
+        }
+        @keyframes pulseWhite {
+            0% { text-shadow: 0 0 0 rgba(255,255,255,0.3); }
+            70% { text-shadow: 0 0 20px rgba(255,255,255,0.6); }
+            100% { text-shadow: 0 0 0 rgba(255,255,255,0.3); }
         }
         .splash-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, #ff8f9f);
+            font-family: 'Syne', 'Major Mono Display', monospace;
+            background: linear-gradient(135deg, #fff, #aaa);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
         }
         .splash-sub {
-            color: #dd8a9a;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
+            color: #888;
+            margin: 1rem 0 2rem;
+            font-size: 0.85rem;
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: 0.5px;
         }
         .enter-btn {
-            background: linear-gradient(135deg, #b81a2e, #8f1122);
-            border: none;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            border: 1px solid rgba(255,255,255,0.15);
             padding: 1rem 2.5rem;
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: white;
             border-radius: 60px;
             cursor: pointer;
-            transition: all 0.25s;
-            box-shadow: 0 8px 20px rgba(180, 20, 40, 0.5);
-            font-family: inherit;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+            font-family: 'Syne', sans-serif;
             display: inline-flex;
             align-items: center;
             gap: 12px;
         }
         .enter-btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, #d42a46, #b81a2e);
-            box-shadow: 0 0 20px #ff4d6d;
-            letter-spacing: 1px;
+            transform: scale(1.03);
+            background: linear-gradient(135deg, #2a2a2a, #151515);
+            box-shadow: 0 0 25px rgba(255,255,255,0.08);
+            letter-spacing: 0.5px;
+            border-color: rgba(255,255,255,0.3);
         }
 
-        /* main content (hidden until splash clicked) */
+        /* MAIN CONTENT */
         .main-content {
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.8s ease, visibility 0s linear 0.8s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 2rem;
+            transition: opacity 0.9s ease, visibility 0s linear 0.9s;
             position: relative;
+            min-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 2rem;
         }
         .main-content.visible {
             opacity: 1;
             visibility: visible;
-            transition: opacity 0.8s ease, visibility 0s linear 0s;
+            transition: opacity 0.9s ease, visibility 0s linear 0s;
         }
 
-        /* background after splash */
+        /* DYNAMIC DARK AURORA */
         .aurora-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 40% 30%, #2a030a, #000000);
-            z-index: 0;
+            background: #000000;
+            z-index: -2;
         }
         .aurora-bg::before {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 70% 20%, rgba(200, 30, 50, 0.35), transparent 70%);
-            animation: breatheGlow 8s infinite alternate;
+            background: radial-gradient(circle at 70% 20%, rgba(60, 60, 60, 0.12), transparent 70%);
+            animation: slowDrift 12s infinite alternate;
         }
-        @keyframes breatheGlow {
-            0% { opacity: 0.4; transform: scale(1);}
-            100% { opacity: 0.9; transform: scale(1.2);}
+        @keyframes slowDrift {
+            0% { opacity: 0.15; transform: scale(1);}
+            100% { opacity: 0.4; transform: scale(1.3);}
         }
 
+        /* RAIN EFFECT (black/white) */
         #rainCanvas {
             position: fixed;
             top: 0;
@@ -146,37 +155,43 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 2;
-            opacity: 0.7;
-            filter: blur(0.8px);
+            z-index: -1;
+            opacity: 0.35;
+            filter: blur(0.6px);
         }
 
-        /* main card */
-        .linkhub {
-            position: relative;
-            z-index: 30;
-            max-width: 780px;
+        /* MAIN CONTAINER - 3 SECTIONS */
+        .trinity-container {
+            max-width: 1000px;
             width: 100%;
-            background: rgba(8, 2, 5, 0.55);
-            backdrop-filter: blur(22px) saturate(180%);
-            border-radius: 4rem;
-            border: 1px solid rgba(255, 70, 100, 0.6);
-            box-shadow: 0 45px 80px -25px rgba(0,0,0,0.8), 0 0 0 1px rgba(230, 50, 80, 0.3);
-            transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        /* ========== SECTION 1: KILLEZ PROFILE ========== */
+        .section-killez {
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 45px -18px rgba(0,0,0,0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s;
             overflow: hidden;
         }
-        .linkhub:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 55px 90px -20px #b81a2e80, 0 0 0 2px rgba(255, 90, 110, 0.5);
+        .section-killez:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 55px -15px rgba(255,255,255,0.04);
+            border-color: rgba(255,255,255,0.2);
         }
-
         .profile {
-            padding: 2.5rem 2rem 1.8rem;
+            padding: 2rem 2rem 1.8rem;
             text-align: center;
-            background: radial-gradient(ellipse at 50% 0%, rgba(180, 20, 40, 0.2), transparent 70%);
+            background: radial-gradient(ellipse at 50% 0%, rgba(60, 60, 60, 0.06), transparent 70%);
         }
         .avatar {
-            background: linear-gradient(145deg, #bc1e34, #640a18);
+            background: linear-gradient(145deg, #2a2a2a, #111111);
             width: 120px;
             height: 120px;
             border-radius: 50%;
@@ -184,309 +199,442 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 0 4px rgba(255, 100, 120, 0.6);
-            animation: pulseRed 2.5s infinite;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15), 0 20px 35px -10px black;
+            animation: pulseGlow 2.8s infinite;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
-        @keyframes pulseRed {
-            0% { box-shadow: 0 0 0 0 rgba(220, 50, 80, 0.7); }
-            70% { box-shadow: 0 0 0 12px rgba(220, 50, 80, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(220, 50, 80, 0); }
+        .avatar:hover { transform: scale(1.03); }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.15), 0 20px 35px -10px black; }
+            70% { box-shadow: 0 0 0 12px rgba(255, 255, 255, 0), 0 20px 35px -10px black; }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), 0 20px 35px -10px black; }
         }
-        .avatar i { font-size: 4rem; color: #ffd9e0; }
-        h1 {
-            font-size: 3.2rem;
+        .burger-svg { 
+            width: 85px; 
+            height: 85px; 
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+        }
+        .burger-svg path, .burger-svg circle, .burger-svg rect, .burger-svg ellipse {
+            filter: grayscale(0.7) contrast(1.1);
+        }
+        
+        /* LOOPING TYPEWRITER - Better Font */
+        .typewriter-container {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        #typewriterName {
+            font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(125deg, #ffffff, #ff8f9f, #ff4d6d);
+            font-family: 'Syne', 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #ffffff, #cccccc, #aaaaaa);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
+            letter-spacing: -1px;
             text-transform: uppercase;
+            border-right: 3px solid #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blinkCursor 0.75s step-end infinite;
         }
-        .handle {
-            background: rgba(180, 20, 45, 0.5);
-            backdrop-filter: blur(12px);
-            display: inline-flex;
-            gap: 12px;
-            padding: 0.5rem 1.8rem;
-            border-radius: 80px;
-            color: #ffd0d8;
-            border: 1px solid #ff6078;
-            font-size: 0.85rem;
+        @keyframes blinkCursor {
+            from, to { border-color: transparent; }
+            50% { border-color: #ffffff; }
         }
+        
         .bio {
             margin-top: 1.2rem;
-            color: #f0bac6;
-            background: rgba(0, 0, 0, 0.45);
+            color: #aaa;
+            background: rgba(0, 0, 0, 0.5);
             max-width: 90%;
             margin-left: auto;
             margin-right: auto;
             padding: 0.6rem 1.2rem;
-            border-radius: 60px;
+            border-radius: 80px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+            font-size: 0.85rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
         .badge-tag {
-            background: #b81a2e70;
-            padding: 4px 14px;
+            background: rgba(50, 50, 50, 0.6);
+            padding: 4px 12px;
             border-radius: 40px;
             font-size: 0.7rem;
             margin: 0 4px;
+            font-weight: 500;
+            color: #ccc;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .links-section { padding: 1.5rem 2rem 0.8rem; }
+        /* ========== SECTION 2: LINKS (Better Typography) ========== */
+        .section-links {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.2rem 1.5rem;
+            transition: all 0.3s;
+        }
+        .section-links:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.5);
+        }
+        .section-title {
+            font-family: 'Syne', monospace;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #bbb;
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid #fff;
+        }
+        .links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
         .link-card {
-            background: rgba(12, 3, 7, 0.7);
-            border-radius: 2.2rem;
-            margin-bottom: 1.2rem;
-            transition: all 0.28s;
-            border: 1px solid rgba(220, 60, 85, 0.45);
+            background: rgba(15, 15, 15, 0.8);
+            border-radius: 1.8rem;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            overflow: hidden;
         }
         .link-card:hover {
-            transform: translateX(12px) scale(1.02);
-            background: rgba(35, 8, 18, 0.9);
-            border-color: #ff4d6d;
+            transform: translateX(12px) scale(1.01);
+            background: rgba(30, 30, 30, 0.95);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 12px 28px -10px rgba(0,0,0,0.8);
         }
         .link-btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1.1rem 1.8rem;
+            padding: 1rem 1.6rem;
             text-decoration: none;
-            color: #fff0f3;
-            font-weight: 700;
+            color: #eee;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
         }
         .link-left { display: flex; align-items: center; gap: 1.2rem; }
-        .link-left i { font-size: 2.1rem; width: 42px; }
-        .link-right {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-            transition: 0.2s;
+        
+        .link-left i {
+            font-size: 2rem;
+            width: 44px;
+            transition: filter 0.3s ease;
+            display: inline-block;
         }
-        .link-card:hover .link-right { background: #b81a2e; color: white; }
+        .link-card.discord:hover .link-left i {
+            animation: spinInfinite 0.8s linear infinite;
+            color: #5865F2;
+            filter: drop-shadow(0 0 8px #5865F2);
+        }
+        .link-card.spotify-link:hover .link-left i {
+            animation: spinInfinite 0.8s linear infinite;
+            color: #1DB954;
+            filter: drop-shadow(0 0 8px #1DB954);
+        }
+        @keyframes spinInfinite {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .link-left span { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.2px; }
+        .link-right {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            transition: all 0.25s;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .link-card:hover .link-right {
+            background: #2a2a2a;
+            color: white;
+            box-shadow: 0 0 12px rgba(255,255,255,0.08);
+            transform: translateX(4px);
+        }
 
-        /* SPOTIFY EMBED PLAYER */
-        .spotify-player-section {
-            margin: 1rem 2rem 2rem;
-            background: linear-gradient(145deg, #12070c, #080104);
+        /* ========== SECTION 3: SPOTIFY FULL PLAYER ========== */
+        .section-spotify {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
             border-radius: 2.5rem;
-            padding: 1rem;
-            border: 1px solid rgba(255, 80, 100, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.2rem 1.5rem 1.5rem;
+            transition: all 0.3s;
+        }
+        .section-spotify:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.5);
         }
         .spotify-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 0.5rem 1rem;
-            color: #ffaebb;
-            font-weight: 700;
-            font-size: 0.75rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 1rem;
+            padding: 0 0.2rem;
+        }
+        .music-type-badge {
+            background: rgba(50, 50, 50, 0.6);
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            color: #ccc;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-weight: 500;
+            font-family: 'Space Grotesk', sans-serif;
         }
         .spotify-embed {
             border-radius: 1.5rem;
             overflow: hidden;
-            margin-top: 0.5rem;
         }
         iframe {
             width: 100%;
             border-radius: 1.2rem;
             border: none;
+            min-height: 352px;
+            height: 352px;
         }
-        .footer-note {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 1rem;
+        .spotify-note {
+            font-size: 0.65rem;
             text-align: center;
-            font-size: 0.7rem;
-            color: #c07a88;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            border-top: 1px solid #ff4d6d40;
+            margin-top: 12px;
+            color: #777;
+            font-family: 'Space Grotesk', sans-serif;
         }
-        @media (max-width: 600px) {
-            h1 { font-size: 2.3rem; }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.65rem;
+            color: #555;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 400;
+        }
+        
+        .main-content::-webkit-scrollbar { width: 5px; }
+        .main-content::-webkit-scrollbar-track { background: #111; border-radius: 10px; }
+        .main-content::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        
+        @media (max-width: 680px) {
+            .main-content { padding: 1rem; }
+            #typewriterName { font-size: 2rem; white-space: normal; border-right: none; }
+            .typewriter-container { display: block; }
             .link-left span { font-size: 0.9rem; }
+            .link-left i { font-size: 1.5rem; width: 32px; }
+            .link-btn { padding: 0.9rem 1.2rem; }
+            .profile { padding: 1.5rem; }
+            .burger-svg { width: 65px; height: 65px; }
+            .avatar { width: 95px; height: 95px; }
         }
     </style>
 </head>
 <body>
 
-<!-- SPLASH SCREEN (pre-loader with button) -->
+<!-- SPLASH SCREEN -->
 <div class="splash-screen" id="splashScreen">
     <div class="splash-content">
-        <div class="splash-logo">
-            <i class="fas fa-skull"></i>
-        </div>
-        <div class="splash-title">KILLEZ REALM</div>
-        <div class="splash-sub">crimson rituals · spotify curse</div>
-        <button class="enter-btn" id="enterBtn">
-            <i class="fas fa-dragon"></i> ENTER THE ABYSS
-            <i class="fas fa-arrow-right"></i>
-        </button>
-        <div style="margin-top: 1.5rem; font-size: 0.7rem; color: #aa6a7a;">
-            <i class="fas fa-music"></i> spotify integration · dark audio
-        </div>
+        <div class="splash-logo"><i class="fas fa-skull"></i></div>
+        <div class="splash-title">KILLEZ</div>
+        <div class="splash-sub">black typography · looping typewriter · infinite spin</div>
+        <button class="enter-btn" id="enterBtn"><i class="fas fa-dragon"></i> ENTER THE VOID <i class="fas fa-arrow-right"></i></button>
+        <div style="margin-top: 1.5rem; font-size: 0.7rem; color: #666;"><i class="fab fa-spotify"></i> premium fonts · pure black</div>
     </div>
 </div>
 
-<!-- MAIN CONTENT (hidden until button click) -->
+<!-- MAIN CONTENT -->
 <div class="main-content" id="mainContent">
     <div class="aurora-bg"></div>
     <canvas id="rainCanvas"></canvas>
 
-    <div class="linkhub">
-        <div class="profile">
-            <div class="avatar">
-                <i class="fas fa-skull"></i>
-            </div>
-            <h1>KILLEZ</h1>
-            <div class="handle">
-                <i class="fas fa-dragon"></i> BLOOD ECLIPSE · EXECUTIONER
-            </div>
-            <div class="bio">
-                <i class="fas fa-fire"></i> no mercy · spotify slaughter · crimson rain <i class="fas fa-cloud-showers-heavy"></i><br>
-                <span class="badge-tag"><i class="fab fa-discord"></i> abyss sanctum</span>
-                <span class="badge-tag"><i class="fab fa-spotify"></i> official playlist</span>
+    <div class="trinity-container">
+        
+        <!-- SECTION 1: KILLEZ PROFILE WITH LOOPING TYPEWRITER -->
+        <div class="section-killez">
+            <div class="profile">
+                <div class="avatar" id="burgerAvatar">
+                    <svg class="burger-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 40 C25 25, 75 25, 75 40 L75 48 C75 55, 25 55, 25 48 Z" fill="#E2A13F" stroke="#B97F2E" stroke-width="1.5"/>
+                        <circle cx="40" cy="38" r="1.8" fill="#FFF5D1"/><circle cx="55" cy="36" r="1.8" fill="#FFF5D1"/>
+                        <circle cx="48" cy="42" r="1.5" fill="#FFF5D1"/><circle cx="62" cy="41" r="1.5" fill="#FFF5D1"/>
+                        <path d="M28 48 C30 52, 40 50, 50 52 C60 50, 70 52, 72 48 L72 52 C70 56, 60 54, 50 56 C40 54, 30 56, 28 52 Z" fill="#8BC34A" stroke="#5A8F2C" stroke-width="1"/>
+                        <rect x="28" y="52" width="44" height="12" rx="4" fill="#8B4513" stroke="#5C2E0B" stroke-width="1.5"/>
+                        <path d="M30 52 L35 60 L40 53 L45 61 L50 52 L55 60 L60 53 L65 59 L70 52" fill="#FFC107" stroke="#E6A800" stroke-width="1"/>
+                        <path d="M28 62 C28 62, 28 70, 35 72 C45 75, 55 75, 65 72 C72 70, 72 62, 72 62 Z" fill="#E2A13F" stroke="#B97F2E" stroke-width="1.5"/>
+                        <circle cx="40" cy="47" r="5" fill="white" stroke="#222" stroke-width="1.2"/>
+                        <circle cx="60" cy="47" r="5" fill="white" stroke="#222" stroke-width="1.2"/>
+                        <circle cx="42" cy="47" r="2.2" fill="black"/><circle cx="62" cy="47" r="2.2" fill="black"/>
+                        <ellipse cx="34" cy="52" rx="3.5" ry="2" fill="#FF9999" opacity="0.7"/>
+                        <ellipse cx="66" cy="52" rx="3.5" ry="2" fill="#FF9999" opacity="0.7"/>
+                    </svg>
+                </div>
+                <div class="typewriter-container">
+                    <div id="typewriterName"></div>
+                </div>
+                <div class="bio">
+                    <i class="fas fa-fire"></i> looping typewriter · infinite spin · premium typography <i class="fas fa-cloud-showers-heavy"></i><br>
+                    <span class="badge-tag"><i class="fab fa-discord"></i> direct user</span>
+                    <span class="badge-tag"><i class="fab fa-spotify"></i> full player</span>
+                </div>
             </div>
         </div>
 
-        <div class="links-section">
-            <div class="link-card discord">
-                <a href="#" class="link-btn" id="discordLink">
-                    <div class="link-left"><i class="fab fa-discord"></i><span>DISCORD · THE ABYSS</span></div>
-                    <div class="link-right">join the slaughter <i class="fas fa-arrow-right"></i></div>
-                </a>
-            </div>
-            <div class="link-card spotify">
-                <a href="#" class="link-btn" id="spotifyProfileLink">
-                    <div class="link-left"><i class="fab fa-spotify"></i><span>SPOTIFY · BLOOD PROFILE</span></div>
-                    <div class="link-right">follow the ritual <i class="fas fa-arrow-right"></i></div>
-                </a>
+        <!-- SECTION 2: LINKS -->
+        <div class="section-links">
+            <div class="section-title"><i class="fas fa-link"></i> — DARK CONNECTIONS</div>
+            <div class="links-grid">
+                <div class="link-card discord">
+                    <a href="#" class="link-btn" id="discordLink">
+                        <div class="link-left"><i class="fab fa-discord"></i><span>DISCORD · ADD KILLEZ</span></div>
+                        <div class="link-right">ID: 1105558964495716394 <i class="fas fa-arrow-right"></i></div>
+                    </a>
+                </div>
+                <div class="link-card spotify-link">
+                    <a href="#" class="link-btn" id="spotifyProfileLink">
+                        <div class="link-left"><i class="fab fa-spotify"></i><span>SPOTIFY · PROFILE</span></div>
+                        <div class="link-right">user: 31adusfvpe3vz5vvyuh2a457rivu <i class="fas fa-arrow-right"></i></div>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- SPOTIFY EMBED (plays real Spotify songs) -->
-        <div class="spotify-player-section">
+        <!-- SECTION 3: SPOTIFY FULL PLAYER -->
+        <div class="section-spotify">
             <div class="spotify-header">
-                <i class="fab fa-spotify" style="color: #1DB954;"></i>
-                <span>SPOTIFY EMBED · OFFICIAL KILLEZ PLAYLIST</span>
-                <i class="fas fa-waveform"></i>
+                <div><i class="fab fa-spotify" style="color: #1DB954;"></i> <span style="font-weight: 600;">FULL SONIC RITUAL</span></div>
+                <div class="music-type-badge" id="musicTypeBadge"><i class="fas fa-head-side-goggles"></i> DARK TRAP / EMO RAP</div>
             </div>
             <div class="spotify-embed">
                 <iframe id="spotifyIframe" 
-                        src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" 
+                        src="https://open.spotify.com/embed/playlist/6mF785KixssbIecQkMxzgs?utm_source=generator&theme=0" 
                         width="100%" height="352" 
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                         loading="lazy">
                 </iframe>
             </div>
-            <div style="font-size: 0.7rem; text-align: center; margin-top: 10px; color: #aa6a7a;">
-                <i class="fas fa-info-circle"></i> 🎧 real spotify tracks — powered by spotify embed
+            <div class="spotify-note">
+                <i class="fas fa-music"></i> full tracks · skip · repeat · unlimited
             </div>
         </div>
 
         <div class="footer-note">
-            <span><i class="fas fa-skull"></i> killez · 666</span>
-            <span><i class="fas fa-cloud-moon"></i> eternal crimson rain</span>
-            <span><i class="fab fa-spotify"></i> official audio curse</span>
+            <i class="fas fa-skull"></i> killez · black typography · looping typewriter
         </div>
     </div>
 </div>
 
 <script>
     (function() {
-        // ==================== 🔥 REPLACE WITH YOUR REAL URLS 🔥 ====================
+        // ==================== YOUR INFO ====================
+        const DISCORD_USER_ID = "1105558964495716394";
+        const SPOTIFY_USER_ID = "31adusfvpe3vz5vvyuh2a457rivu";
+        
         const MY_LINKS = {
-            discord: "https://discord.gg/YOUR_KILLEZ_SERVER",   // REPLACE: your discord invite
-            spotifyProfile: "https://open.spotify.com/user/YOUR_SPOTIFY_ID"  // REPLACE: your spotify profile
+            discord: `https://discord.com/users/${DISCORD_USER_ID}`,
+            spotifyProfile: `https://open.spotify.com/user/${SPOTIFY_USER_ID}`
         };
         
-        // Optional: you can change the default embedded playlist/track URI
-        // Current embed is a dark/moody playlist. You can replace with your own playlist or track:
-        // For a track: https://open.spotify.com/embed/track/TRACK_ID
-        // For playlist: https://open.spotify.com/embed/playlist/PLAYLIST_ID
-        // You can also let user update later via config
-        const SPOTIFY_EMBED_URL = "https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0";
-        // ^ Replace with your own killez playlist/track embed for better personalization
+        // ==================== LOOPING TYPEWRITER EFFECT ====================
+        const nameElement = document.getElementById('typewriterName');
+        const fullName = "KILLEZ";
+        let currentIndex = 0;
+        let typingTimeout = null;
+        let isDeleting = false;
         
-        // DOM elements
+        function loopTypewriter() {
+            if (!isDeleting) {
+                if (currentIndex < fullName.length) {
+                    nameElement.textContent = fullName.substring(0, currentIndex + 1);
+                    currentIndex++;
+                    typingTimeout = setTimeout(loopTypewriter, 150);
+                } else {
+                    isDeleting = true;
+                    typingTimeout = setTimeout(loopTypewriter, 1500);
+                }
+            } else {
+                if (currentIndex > 0) {
+                    nameElement.textContent = fullName.substring(0, currentIndex - 1);
+                    currentIndex--;
+                    typingTimeout = setTimeout(loopTypewriter, 100);
+                } else {
+                    isDeleting = false;
+                    typingTimeout = setTimeout(loopTypewriter, 500);
+                }
+            }
+        }
+        
+        // Music type
+        const musicBadge = document.getElementById('musicTypeBadge');
+        if (musicBadge) musicBadge.innerHTML = `<i class="fas fa-head-side-goggles"></i> DARK TRAP / EMO RAP`;
+        
+        // Burger easter egg
+        const burgerAvatar = document.getElementById('burgerAvatar');
+        if (burgerAvatar) {
+            burgerAvatar.addEventListener('click', () => {
+                alert("🖤 BETTER TYPOGRAPHY EDITION 🖤\nLooping typewriter | Premium fonts\nPure black aesthetic.");
+            });
+        }
+        
+        // Splash & entrance
         const splash = document.getElementById('splashScreen');
         const mainContent = document.getElementById('mainContent');
         const enterBtn = document.getElementById('enterBtn');
         const discordLink = document.getElementById('discordLink');
         const spotifyProfileLink = document.getElementById('spotifyProfileLink');
-        const spotifyIframe = document.getElementById('spotifyIframe');
         
-        // Optionally update iframe src to your custom playlist
-        if (spotifyIframe) {
-            // you can set custom playlist here if you change SPOTIFY_EMBED_URL
-            spotifyIframe.src = SPOTIFY_EMBED_URL;
-        }
-        
-        // Function to handle entering the hub
         function enterRealm() {
             splash.style.opacity = '0';
             splash.style.pointerEvents = 'none';
             setTimeout(() => {
                 splash.style.display = 'none';
                 mainContent.classList.add('visible');
-                // start rain effect (canvas)
                 initRainAndCanvas();
-                // trigger any audio visual subtlety
-                console.log("☠️ KILLEZ REALM UNLOCKED · SPOTIFY RITUAL ACTIVE");
+                loopTypewriter();
+                console.log("🖤 KILLEZ BETTER TYPOGRAPHY — LOOPING TYPEWRITER ACTIVE");
             }, 1000);
         }
-        
         enterBtn.addEventListener('click', enterRealm);
         
-        // external link handlers
         function openLink(url, platform) {
-            if (!url || url.includes("YOUR_") || url === "https://discord.gg/YOUR_KILLEZ_SERVER" || url.includes("YOUR_SPOTIFY_ID")) {
-                alert(`⚠️ BLOOD WARNING ⚠️\nSet your ${platform} link inside MY_LINKS object (in <script>). Replace with real URL.`);
+            if (!url || url.includes("undefined")) {
+                alert(`⚠️ BLACK WARNING ⚠️\n${platform} link is invalid.\nCheck your ID.`);
                 return false;
             }
             window.open(url, '_blank');
             return true;
         }
+        if (discordLink) discordLink.addEventListener('click', (e) => { e.preventDefault(); openLink(MY_LINKS.discord, "Discord"); });
+        if (spotifyProfileLink) spotifyProfileLink.addEventListener('click', (e) => { e.preventDefault(); openLink(MY_LINKS.spotifyProfile, "Spotify"); });
         
-        if (discordLink) {
-            discordLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                openLink(MY_LINKS.discord, "Discord");
-            });
-        }
-        if (spotifyProfileLink) {
-            spotifyProfileLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                openLink(MY_LINKS.spotifyProfile, "Spotify Profile");
-            });
-        }
-        
-        // ==================== RAIN EFFECT (initialized after splash) ====================
+        // ==================== RAIN EFFECT (black/white) ====================
         let rainInitialized = false;
         let canvas, ctx, drops = [];
-        const DROP_COUNT = 520;
+        const DROP_COUNT = 500;
         
         function resizeCanvas() {
             if (!canvas) return;
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
-        
         function initRainDrops() {
             if (!canvas) return;
             drops = [];
             for (let i = 0; i < DROP_COUNT; i++) {
                 drops.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    len: 14 + Math.random() * 30,
-                    speed: 3 + Math.random() * 9,
-                    thickness: 0.8 + Math.random() * 1.7,
-                    opacity: 0.3 + Math.random() * 0.6,
+                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                    len: 12 + Math.random() * 28, speed: 3 + Math.random() * 9,
+                    thickness: 0.7 + Math.random() * 1.5, opacity: 0.2 + Math.random() * 0.4,
                 });
             }
         }
-        
         function drawRain() {
             if (!ctx) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -495,17 +643,13 @@
                 ctx.moveTo(d.x, d.y);
                 ctx.lineTo(d.x, d.y + d.len);
                 ctx.lineWidth = d.thickness;
-                ctx.strokeStyle = `rgba(200, 50, 75, ${d.opacity * 0.85})`;
+                ctx.strokeStyle = `rgba(255, 255, 255, ${d.opacity * 0.5})`;
                 ctx.stroke();
                 d.y += d.speed;
-                if (d.y > canvas.height) {
-                    d.y = -d.len;
-                    d.x = Math.random() * canvas.width;
-                }
+                if (d.y > canvas.height) { d.y = -d.len; d.x = Math.random() * canvas.width; }
             }
             requestAnimationFrame(drawRain);
         }
-        
         function initRainAndCanvas() {
             if (rainInitialized) return;
             canvas = document.getElementById('rainCanvas');
@@ -514,15 +658,10 @@
             resizeCanvas();
             initRainDrops();
             drawRain();
-            window.addEventListener('resize', () => {
-                resizeCanvas();
-                initRainDrops();
-            });
+            window.addEventListener('resize', () => { resizeCanvas(); initRainDrops(); });
             rainInitialized = true;
         }
         
-        // small fallback: if someone clicks fast, canvas might not be visible, but mainContent visible triggers it.
-        // we also ensure that if mainContent becomes visible, we init rain.
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.attributeName === 'class' && mainContent.classList.contains('visible')) {
@@ -532,30 +671,8 @@
         });
         observer.observe(mainContent, { attributes: true });
         
-        // also if already visible?
-        if (mainContent.classList.contains('visible')) {
-            initRainAndCanvas();
-        }
-        
-        console.log("🔥 KILLEZ PREMIUM SPLASH READY — replace discord & spotify links, and customize embed playlist if desired.");
+        console.log("🖤 KILLEZ · BETTER TYPOGRAPHY | DISCORD: 1105558964495716394");
     })();
 </script>
-
-<!-- 
-    #####################################################################
-    #  KILLEZ · SPOTIFY EDITION                                         #
-    #  ✅ Pre-loader splash screen with "ENTER THE ABYSS" button        #
-    #  ✅ Real Spotify songs via official Spotify Embed (playlist/track) #
-    #  ✅ Dark red / crimson theme + cinematic rain effect              #
-    #  ✅ Discord + Spotify profile links (replace placeholders)         #
-    #  ✅ Fully responsive & immersive                                   #
-    #                                                                    #
-    #  HOW TO CUSTOMIZE:                                                 #
-    #  1. Replace MY_LINKS.discord with your Discord invite              #
-    #  2. Replace MY_LINKS.spotifyProfile with your Spotify profile URL  #
-    #  3. (Optional) Change SPOTIFY_EMBED_URL to your own playlist/track #
-    #     Example: "https://open.spotify.com/embed/playlist/ID"          #
-    # #####################################################################
--->
 </body>
 </html>
