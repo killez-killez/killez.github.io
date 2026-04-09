@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>KILLEZ</title>
-    <!-- Premium Modern Fonts - Better Looking Typography -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>KILLEZ | SLIM ICONS · 16 Themes · Black Spotify</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -12,7 +11,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            user-select: none;
         }
+
+        /* ========== CROSSHAIR CURSOR ========== */
+        body, body * { cursor: crosshair; }
+        a, button, .link-card, .avatar, .theme-btn, .settings-icon, .theme-option, .badge-tag { cursor: crosshair; }
 
         body {
             background: #000000;
@@ -20,658 +24,307 @@
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            transition: background-color 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
-        /* ---------- SPLASH SCREEN (black premium) ---------- */
-        .splash-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000000;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(0px);
-            transition: opacity 1.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-            opacity: 1;
+        /* ========== 16 THEMES ========== */
+        body {
+            --text-primary: #ffffff;
+            --text-secondary: #dddddd;
+        }
+        body.theme-dark { --bg-glow: radial-gradient(circle at 70% 20%, rgba(80,80,100,0.15), transparent 70%); --card-bg: rgba(0,0,0,0.88); --border-color: rgba(255,255,255,0.2); --accent: #ffffff; --ring-color: #1DB954; --button-bg: rgba(30,30,40,0.9); }
+        body.theme-blood { --bg-glow: radial-gradient(circle at 70% 20%, rgba(180,30,50,0.3), transparent 70%); --card-bg: rgba(25,5,10,0.92); --border-color: rgba(220,60,80,0.5); --accent: #ff4d6d; --ring-color: #ff4d6d; --button-bg: rgba(50,15,25,0.9); }
+        body.theme-purple { --bg-glow: radial-gradient(circle at 70% 20%, rgba(120,50,180,0.3), transparent 70%); --card-bg: rgba(20,5,35,0.92); --border-color: rgba(160,100,220,0.5); --accent: #b77cff; --ring-color: #b77cff; --button-bg: rgba(40,15,60,0.9); }
+        body.theme-cyan { --bg-glow: radial-gradient(circle at 70% 20%, rgba(0,150,180,0.3), transparent 70%); --card-bg: rgba(0,20,30,0.92); --border-color: rgba(0,180,200,0.5); --accent: #00e5ff; --ring-color: #00e5ff; --button-bg: rgba(0,40,50,0.9); }
+        body.theme-ember { --bg-glow: radial-gradient(circle at 70% 20%, rgba(255,100,30,0.3), transparent 70%); --card-bg: rgba(30,15,5,0.92); --border-color: rgba(255,120,50,0.5); --accent: #ff6a2e; --ring-color: #ff6a2e; --button-bg: rgba(60,25,10,0.9); }
+        body.theme-neon { --bg-glow: radial-gradient(circle at 70% 20%, rgba(0,255,150,0.25), transparent 70%); --card-bg: rgba(0,25,20,0.92); --border-color: rgba(0,255,150,0.5); --accent: #00ff99; --ring-color: #00ff99; --button-bg: rgba(0,50,40,0.9); }
+        body.theme-crimson { --bg-glow: radial-gradient(circle at 70% 20%, rgba(150,0,50,0.35), transparent 70%); --card-bg: rgba(25,0,8,0.94); --border-color: rgba(180,0,60,0.6); --accent: #dc143c; --ring-color: #dc143c; --button-bg: rgba(60,0,20,0.9); }
+        body.theme-midnight { --bg-glow: radial-gradient(circle at 70% 20%, rgba(25,25,100,0.3), transparent 70%); --card-bg: rgba(5,5,25,0.92); --border-color: rgba(60,60,140,0.5); --accent: #5c5cff; --ring-color: #5c5cff; --button-bg: rgba(20,20,60,0.9); }
+        body.theme-sakura { --bg-glow: radial-gradient(circle at 70% 20%, rgba(255,100,150,0.25), transparent 70%); --card-bg: rgba(40,10,25,0.92); --border-color: rgba(255,120,160,0.5); --accent: #ff6b8b; --ring-color: #ff6b8b; --button-bg: rgba(70,20,45,0.9); }
+        body.theme-gold { --bg-glow: radial-gradient(circle at 70% 20%, rgba(200,150,30,0.3), transparent 70%); --card-bg: rgba(25,20,5,0.92); --border-color: rgba(200,160,50,0.5); --accent: #ffd700; --ring-color: #ffd700; --button-bg: rgba(60,45,10,0.9); }
+        body.theme-ghost { --bg-glow: radial-gradient(circle at 70% 20%, rgba(150,150,150,0.25), transparent 70%); --card-bg: rgba(25,25,25,0.90); --border-color: rgba(200,200,200,0.3); --accent: #ccc; --ring-color: #ccc; --button-bg: rgba(45,45,45,0.9); }
+        body.theme-ocean { --bg-glow: radial-gradient(circle at 70% 20%, rgba(0,100,150,0.3), transparent 70%); --card-bg: rgba(0,15,30,0.92); --border-color: rgba(0,150,200,0.5); --accent: #0088ff; --ring-color: #0088ff; --button-bg: rgba(0,30,50,0.9); }
+        body.theme-forest { --bg-glow: radial-gradient(circle at 70% 20%, rgba(0,100,50,0.25), transparent 70%); --card-bg: rgba(0,20,5,0.92); --border-color: rgba(50,150,50,0.5); --accent: #2ecc71; --ring-color: #2ecc71; --button-bg: rgba(0,40,15,0.9); }
+        body.theme-sunset { --bg-glow: radial-gradient(circle at 70% 20%, rgba(255,80,40,0.35), transparent 70%); --card-bg: rgba(30,10,5,0.92); --border-color: rgba(255,100,50,0.5); --accent: #ff5500; --ring-color: #ff5500; --button-bg: rgba(60,25,15,0.9); }
+        body.theme-matrix { --bg-glow: radial-gradient(circle at 70% 20%, rgba(0,200,0,0.2), transparent 70%); --card-bg: rgba(0,15,0,0.92); --border-color: rgba(0,255,0,0.3); --accent: #00ff00; --ring-color: #00ff00; --button-bg: rgba(0,30,0,0.9); }
+        body.theme-halloween { --bg-glow: radial-gradient(circle at 70% 20%, rgba(255,100,0,0.35), transparent 70%); --card-bg: rgba(20,5,0,0.92); --border-color: rgba(255,100,0,0.5); --accent: #ff6600; --ring-color: #ff6600; --button-bg: rgba(50,20,0,0.9); }
+        body.theme-sorcerer { --bg-glow: radial-gradient(circle at 70% 20%, rgba(100,0,150,0.4), transparent 70%); --card-bg: rgba(15,0,25,0.94); --border-color: rgba(150,0,200,0.5); --accent: #aa44ff; --ring-color: #aa44ff; --button-bg: rgba(40,0,60,0.9); }
+
+        .aurora-bg::before { background: var(--bg-glow); transition: background 0.3s ease; }
+        .section-killez, .section-links, .section-spotify, .settings-panel { background: var(--card-bg); border-color: var(--border-color); transition: all 0.3s; }
+        .bio, .music-type-badge, .info-row, .settings-panel { background: var(--button-bg); }
+        .section-title { border-left-color: var(--accent); color: var(--text-secondary); }
+        .status-ring { border-color: var(--ring-color); animation: pulseRing 1.5s ease-out infinite; }
+        
+        /* Clean text */
+        .bio, .info-row span, .music-type-badge, .footer-note, .section-title, .badge-tag, .spotify-header span, .footer-note i, .footer-note span, .settings-title {
+            color: var(--text-secondary) !important;
+        }
+        .enter-btn, .splash-sub, .typewriter-container, #typewriterName, .settings-header h2 {
+            color: var(--text-primary) !important;
+        }
+        .spotify-header i, .link-left i, .info-row i, .bio i, .section-title i {
+            color: var(--accent) !important;
+        }
+        
+        /* ========== SLIM ICON ONLY BUTTONS ========== */
+        .link-left span { display: none; }
+        .link-left { gap: 0; }
+        .link-left i { font-size: 2rem; width: auto; margin: 0; }
+        .link-right { display: none; }
+        .link-btn { justify-content: center; padding: 0.8rem; }
+        .link-card { width: 70px; margin: 0 auto; border-radius: 2rem; }
+        .links-grid { display: flex; flex-direction: row; justify-content: center; gap: 1.2rem; }
+        .link-card:hover { transform: translateY(-5px) scale(1.05); }
+        
+        /* Spinning PFP */
+        @keyframes spinPFP { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .avatar { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.2rem; position: relative; cursor: crosshair; animation: spinPFP 10s linear infinite; }
+        .avatar:hover { animation: spinPFP 2s linear infinite; transform: scale(1.02); }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        
+        /* Loading skeleton */
+        .skeleton-iframe { background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 1.2rem; min-height: 352px; width: 100%; }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+        
+        /* BLACK SPOTIFY EMBED - force dark theme */
+        .spotify-embed iframe {
+            background-color: #000000 !important;
+            filter: brightness(0.9) contrast(1.1);
+        }
+        
+        /* Toast */
+        .toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px); background: rgba(0,0,0,0.9); color: #1DB954; padding: 10px 20px; border-radius: 40px; font-size: 0.8rem; z-index: 1000; opacity: 0; transition: all 0.3s; pointer-events: none; border: 1px solid #1DB954; white-space: nowrap; }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        
+        /* Settings Panel */
+        .settings-panel { 
+            position: fixed; 
+            top: 0; 
+            right: -400px; 
+            width: 320px; 
+            height: 100vh; 
+            z-index: 9999; 
+            backdrop-filter: blur(20px); 
+            border-left: 1px solid var(--border-color); 
+            transition: right 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); 
+            padding: 1.5rem; 
+            overflow-y: auto; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 1rem;
             pointer-events: auto;
         }
-        .splash-content {
-            text-align: center;
-            max-width: 520px;
-            padding: 2.5rem;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(24px);
-            border-radius: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 40px 70px -25px rgba(0,0,0,0.8), 0 0 0 1px rgba(255, 255, 255, 0.03);
-            animation: floatEntrance 1.2s ease-out;
-        }
-        @keyframes floatEntrance {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .splash-logo {
-            font-size: 5.5rem;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(255,255,255,0.2);
-            animation: pulseWhite 2s infinite;
-        }
-        @keyframes pulseWhite {
-            0% { text-shadow: 0 0 0 rgba(255,255,255,0.3); }
-            70% { text-shadow: 0 0 20px rgba(255,255,255,0.6); }
-            100% { text-shadow: 0 0 0 rgba(255,255,255,0.3); }
-        }
-        .splash-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            font-family: 'Syne', 'Major Mono Display', monospace;
-            background: linear-gradient(135deg, #fff, #aaa);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.5px;
-        }
-        .splash-sub {
-            color: #888;
-            margin: 1rem 0 2rem;
-            font-size: 0.85rem;
-            font-family: 'Space Grotesk', monospace;
-            letter-spacing: 0.5px;
-        }
-        .enter-btn {
-            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: white;
-            border-radius: 60px;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-            font-family: 'Syne', sans-serif;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .enter-btn:hover {
-            transform: scale(1.03);
-            background: linear-gradient(135deg, #2a2a2a, #151515);
-            box-shadow: 0 0 25px rgba(255,255,255,0.08);
-            letter-spacing: 0.5px;
-            border-color: rgba(255,255,255,0.3);
-        }
-
-        /* MAIN CONTENT */
-        .main-content {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.9s ease, visibility 0s linear 0.9s;
-            position: relative;
-            min-height: 100vh;
-            overflow-y: auto;
-            overflow-x: hidden;
-            padding: 2rem;
-        }
-        .main-content.visible {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.9s ease, visibility 0s linear 0s;
-        }
-
-        /* DYNAMIC DARK AURORA */
-        .aurora-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000000;
-            z-index: -2;
-        }
-        .aurora-bg::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 70% 20%, rgba(60, 60, 60, 0.12), transparent 70%);
-            animation: slowDrift 12s infinite alternate;
-        }
-        @keyframes slowDrift {
-            0% { opacity: 0.15; transform: scale(1);}
-            100% { opacity: 0.4; transform: scale(1.3);}
-        }
-
-        /* RAIN EFFECT (black/white) */
-        #rainCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.35;
-            filter: blur(0.6px);
-        }
-
-        /* MAIN CONTAINER - 3 SECTIONS */
-        .trinity-container {
-            max-width: 1000px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        /* ========== SECTION 1: KILLEZ PROFILE ========== */
-        .section-killez {
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(20px) saturate(180%);
-            border-radius: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 25px 45px -18px rgba(0,0,0,0.8);
-            transition: transform 0.3s ease, box-shadow 0.3s;
-            overflow: hidden;
-        }
-        .section-killez:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 55px -15px rgba(255,255,255,0.04);
-            border-color: rgba(255,255,255,0.2);
-        }
-        .profile {
-            padding: 2rem 2rem 1.8rem;
-            text-align: center;
-            background: radial-gradient(ellipse at 50% 0%, rgba(60, 60, 60, 0.06), transparent 70%);
-        }
-        .avatar {
-            background: linear-gradient(145deg, #2a2a2a, #111111);
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15), 0 20px 35px -10px black;
-            animation: pulseGlow 2.8s infinite;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        .avatar:hover { transform: scale(1.03); }
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.15), 0 20px 35px -10px black; }
-            70% { box-shadow: 0 0 0 12px rgba(255, 255, 255, 0), 0 20px 35px -10px black; }
-            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), 0 20px 35px -10px black; }
-        }
-        .burger-svg { 
-            width: 85px; 
-            height: 85px; 
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
-        }
-        .burger-svg path, .burger-svg circle, .burger-svg rect, .burger-svg ellipse {
-            filter: grayscale(0.7) contrast(1.1);
-        }
+        .settings-panel.open { right: 0; }
+        .settings-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .close-settings { background: none; border: none; font-size: 1.5rem; cursor: crosshair; color: var(--text-secondary); transition: 0.2s; pointer-events: auto; }
+        .close-settings:hover { transform: scale(1.1); color: var(--accent); }
+        .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 0.5rem; }
+        .theme-option { background: var(--button-bg); border: 1px solid var(--border-color); border-radius: 1rem; padding: 8px 4px; text-align: center; cursor: crosshair; transition: 0.2s; font-size: 0.75rem; color: var(--text-secondary); pointer-events: auto; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .theme-option:hover { transform: scale(1.02); border-color: var(--accent); background: rgba(255,255,255,0.1); }
+        .settings-icon { position: fixed; bottom: 20px; left: 20px; z-index: 10000; background: var(--button-bg); backdrop-filter: blur(12px); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: crosshair; border: 1px solid var(--border-color); transition: 0.2s; font-size: 1.3rem; color: var(--text-secondary); pointer-events: auto; }
+        .settings-icon:hover { transform: scale(1.1); border-color: var(--accent); color: var(--accent); }
         
-        /* LOOPING TYPEWRITER - Better Font */
-        .typewriter-container {
-            display: inline-block;
-            margin-bottom: 0.5rem;
-        }
-        #typewriterName {
-            font-size: 3rem;
-            font-weight: 800;
-            font-family: 'Syne', 'Space Grotesk', sans-serif;
-            background: linear-gradient(135deg, #ffffff, #cccccc, #aaaaaa);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            border-right: 3px solid #ffffff;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: blinkCursor 0.75s step-end infinite;
-        }
-        @keyframes blinkCursor {
-            from, to { border-color: transparent; }
-            50% { border-color: #ffffff; }
-        }
-        
-        .bio {
-            margin-top: 1.2rem;
-            color: #aaa;
-            background: rgba(0, 0, 0, 0.5);
-            max-width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0.6rem 1.2rem;
-            border-radius: 80px;
-            font-weight: 500;
-            backdrop-filter: blur(4px);
-            font-size: 0.85rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .badge-tag {
-            background: rgba(50, 50, 50, 0.6);
-            padding: 4px 12px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            margin: 0 4px;
-            font-weight: 500;
-            color: #ccc;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        /* ========== SECTION 2: LINKS (Better Typography) ========== */
-        .section-links {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(20px) saturate(180%);
-            border-radius: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 1.2rem 1.5rem;
-            transition: all 0.3s;
-        }
-        .section-links:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.5);
-        }
-        .section-title {
-            font-family: 'Syne', monospace;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            color: #bbb;
-            margin-bottom: 1rem;
-            padding-left: 0.5rem;
-            border-left: 3px solid #fff;
-        }
-        .links-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .link-card {
-            background: rgba(15, 15, 15, 0.8);
-            border-radius: 1.8rem;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            overflow: hidden;
-        }
-        .link-card:hover {
-            transform: translateX(12px) scale(1.01);
-            background: rgba(30, 30, 30, 0.95);
-            border-color: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 12px 28px -10px rgba(0,0,0,0.8);
-        }
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 1.6rem;
-            text-decoration: none;
-            color: #eee;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .link-left { display: flex; align-items: center; gap: 1.2rem; }
-        
-        .link-left i {
-            font-size: 2rem;
-            width: 44px;
-            transition: filter 0.3s ease;
-            display: inline-block;
-        }
-        .link-card.discord:hover .link-left i {
-            animation: spinInfinite 0.8s linear infinite;
-            color: #5865F2;
-            filter: drop-shadow(0 0 8px #5865F2);
-        }
-        .link-card.spotify-link:hover .link-left i {
-            animation: spinInfinite 0.8s linear infinite;
-            color: #1DB954;
-            filter: drop-shadow(0 0 8px #1DB954);
-        }
-        @keyframes spinInfinite {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .link-left span { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.2px; }
-        .link-right {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 0.4rem 1.2rem;
-            border-radius: 60px;
-            transition: all 0.25s;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        .link-card:hover .link-right {
-            background: #2a2a2a;
-            color: white;
-            box-shadow: 0 0 12px rgba(255,255,255,0.08);
-            transform: translateX(4px);
-        }
-
-        /* ========== SECTION 3: SPOTIFY FULL PLAYER ========== */
-        .section-spotify {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(20px) saturate(180%);
-            border-radius: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 1.2rem 1.5rem 1.5rem;
-            transition: all 0.3s;
-        }
-        .section-spotify:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.5);
-        }
-        .spotify-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 1rem;
-            padding: 0 0.2rem;
-        }
-        .music-type-badge {
-            background: rgba(50, 50, 50, 0.6);
-            padding: 0.3rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            color: #ccc;
-            border: 1px solid rgba(255,255,255,0.1);
-            font-weight: 500;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .spotify-embed {
-            border-radius: 1.5rem;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100%;
-            border-radius: 1.2rem;
-            border: none;
-            min-height: 352px;
-            height: 352px;
-        }
-        .spotify-note {
-            font-size: 0.65rem;
-            text-align: center;
-            margin-top: 12px;
-            color: #777;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .footer-note {
-            text-align: center;
-            font-size: 0.65rem;
-            color: #555;
-            margin-top: 0.5rem;
-            padding: 0.5rem;
-            font-family: 'Space Grotesk', monospace;
-            font-weight: 400;
-        }
-        
-        .main-content::-webkit-scrollbar { width: 5px; }
-        .main-content::-webkit-scrollbar-track { background: #111; border-radius: 10px; }
-        .main-content::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-        
-        @media (max-width: 680px) {
-            .main-content { padding: 1rem; }
-            #typewriterName { font-size: 2rem; white-space: normal; border-right: none; }
-            .typewriter-container { display: block; }
-            .link-left span { font-size: 0.9rem; }
-            .link-left i { font-size: 1.5rem; width: 32px; }
-            .link-btn { padding: 0.9rem 1.2rem; }
-            .profile { padding: 1.5rem; }
-            .burger-svg { width: 65px; height: 65px; }
-            .avatar { width: 95px; height: 95px; }
-        }
+        /* Rest of CSS */
+        .splash-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 1.4s; opacity: 1; pointer-events: auto; }
+        .splash-screen.fade-out { opacity: 0; pointer-events: none; }
+        .splash-content { text-align: center; max-width: 520px; padding: 2.5rem; background: rgba(0,0,0,0.85); backdrop-filter: blur(24px); border-radius: 3rem; border: 1px solid rgba(255,255,255,0.15); animation: floatEntrance 1.2s ease-out; }
+        @keyframes floatEntrance { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+        .splash-logo { font-size: 5.5rem; color: #fff; margin-bottom: 1rem; animation: pulseWhite 2s infinite; }
+        @keyframes pulseWhite { 0% { text-shadow: 0 0 0 rgba(255,255,255,0.3); } 70% { text-shadow: 0 0 20px rgba(255,255,255,0.7); } }
+        .splash-title { font-size: 2.8rem; font-weight: 800; font-family: 'Syne', monospace; background: linear-gradient(135deg, #fff, #aaa); background-clip: text; -webkit-background-clip: text; color: transparent; }
+        .enter-btn { background: linear-gradient(135deg, #1a1a1a, #0a0a0a); border: 1px solid rgba(255,255,255,0.2); padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; border-radius: 60px; cursor: crosshair; transition: all 0.3s; display: inline-flex; align-items: center; gap: 12px; color: white !important; }
+        .enter-btn:hover { transform: scale(1.03); background: linear-gradient(135deg, #2a2a2a, #151515); }
+        .main-content { opacity: 0; visibility: hidden; transition: opacity 0.9s ease; padding: 2rem; }
+        .main-content.visible { opacity: 1; visibility: visible; }
+        .aurora-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: -2; }
+        .aurora-bg::before { content: ''; position: absolute; width: 100%; height: 100%; animation: slowDrift 12s infinite alternate; }
+        @keyframes slowDrift { 0% { opacity: 0.1; transform: scale(1); } 100% { opacity: 0.4; transform: scale(1.4); } }
+        #rainCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; opacity: 0.4; filter: blur(0.8px); }
+        .trinity-container { max-width: 1000px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 1.8rem; }
+        .section-killez, .section-links, .section-spotify { backdrop-filter: blur(20px); border-radius: 2.5rem; border: 1px solid; overflow: hidden; }
+        .profile { padding: 2rem; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(60,60,80,0.08), transparent 70%); }
+        .status-ring { position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px; border-radius: 50%; border: 3px solid; pointer-events: none; }
+        @keyframes pulseRing { 0% { transform: scale(0.9); opacity: 0.8; } 100% { transform: scale(1.2); opacity: 0; } }
+        .typewriter-container { display: inline-block; margin-bottom: 0.5rem; }
+        #typewriterName { font-size: 3rem; font-weight: 800; font-family: 'Syne', sans-serif; background: linear-gradient(135deg, #fff, #ccc, #999); background-clip: text; -webkit-background-clip: text; color: transparent; letter-spacing: -1px; border-right: 3px solid #fff; white-space: nowrap; overflow: hidden; animation: blinkCursor 0.75s step-end infinite; }
+        @keyframes blinkCursor { from, to { border-color: transparent; } 50% { border-color: #fff; } }
+        .bio { margin-top: 1.2rem; max-width: 90%; margin-left: auto; margin-right: auto; padding: 0.6rem 1.2rem; border-radius: 80px; font-size: 0.85rem; }
+        .badge-tag { background: rgba(50,50,70,0.6); padding: 4px 12px; border-radius: 40px; font-size: 0.7rem; margin: 0 4px; cursor: crosshair; transition: 0.1s; }
+        .badge-tag:active { transform: scale(0.97); }
+        .section-links { padding: 1.2rem 1.5rem; }
+        .section-spotify { padding: 1.2rem 1.5rem; }
+        .section-title { font-family: 'Syne', monospace; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; margin-bottom: 1rem; padding-left: 0.5rem; border-left: 3px solid; }
+        .spotify-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem; }
+        .music-type-badge { padding: 0.3rem 1.2rem; border-radius: 40px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.15); }
+        iframe { width: 100%; border-radius: 1.2rem; border: none; min-height: 352px; height: 352px; background: #000000; }
+        .info-row { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding: 8px 12px; border-radius: 60px; font-size: 0.75rem; flex-wrap: wrap; gap: 10px; }
+        .footer-note { text-align: center; font-size: 0.65rem; margin-top: 0.5rem; padding: 0.5rem; }
+        @media (max-width: 680px) { #typewriterName { font-size: 2rem; white-space: normal; border-right: none; } .link-left i { font-size: 1.5rem; } .link-card { width: 55px; } .avatar { width: 95px; height: 95px; } .settings-panel { width: 280px; } .toast { bottom: 70px; font-size: 0.7rem; } }
     </style>
 </head>
-<body>
+<body class="theme-dark">
 
-<!-- SPLASH SCREEN -->
 <div class="splash-screen" id="splashScreen">
     <div class="splash-content">
         <div class="splash-logo"><i class="fas fa-skull"></i></div>
         <div class="splash-title">KILLEZ</div>
-        <div class="splash-sub"></div>
-        <button class="enter-btn" id="enterBtn"><i class="fas fa-dragon"></i> ENTER <i class="fas fa-arrow-right"></i></button>
-        <div style="margin-top: 1.5rem; font-size: 0.7rem; color: #666;"><i class="fab fa-spotify"></i> premium fonts · pure black</div>
+        <div class="splash-sub">crosshair · slim icons · black spotify · 16 themes</div>
+        <button class="enter-btn" id="enterBtn"><i class="fas fa-dragon"></i> ENTER THE VOID <i class="fas fa-arrow-right"></i></button>
     </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="main-content" id="mainContent">
     <div class="aurora-bg"></div>
     <canvas id="rainCanvas"></canvas>
 
     <div class="trinity-container">
-        
-        <!-- SECTION 1: KILLEZ PROFILE WITH LOOPING TYPEWRITER -->
         <div class="section-killez">
             <div class="profile">
-                <div class="avatar" id="burgerAvatar">
-                    <svg class="burger-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M25 40 C25 25, 75 25, 75 40 L75 48 C75 55, 25 55, 25 48 Z" fill="#E2A13F" stroke="#B97F2E" stroke-width="1.5"/>
-                        <circle cx="40" cy="38" r="1.8" fill="#FFF5D1"/><circle cx="55" cy="36" r="1.8" fill="#FFF5D1"/>
-                        <circle cx="48" cy="42" r="1.5" fill="#FFF5D1"/><circle cx="62" cy="41" r="1.5" fill="#FFF5D1"/>
-                        <path d="M28 48 C30 52, 40 50, 50 52 C60 50, 70 52, 72 48 L72 52 C70 56, 60 54, 50 56 C40 54, 30 56, 28 52 Z" fill="#8BC34A" stroke="#5A8F2C" stroke-width="1"/>
-                        <rect x="28" y="52" width="44" height="12" rx="4" fill="#8B4513" stroke="#5C2E0B" stroke-width="1.5"/>
-                        <path d="M30 52 L35 60 L40 53 L45 61 L50 52 L55 60 L60 53 L65 59 L70 52" fill="#FFC107" stroke="#E6A800" stroke-width="1"/>
-                        <path d="M28 62 C28 62, 28 70, 35 72 C45 75, 55 75, 65 72 C72 70, 72 62, 72 62 Z" fill="#E2A13F" stroke="#B97F2E" stroke-width="1.5"/>
-                        <circle cx="40" cy="47" r="5" fill="white" stroke="#222" stroke-width="1.2"/>
-                        <circle cx="60" cy="47" r="5" fill="white" stroke="#222" stroke-width="1.2"/>
-                        <circle cx="42" cy="47" r="2.2" fill="black"/><circle cx="62" cy="47" r="2.2" fill="black"/>
-                        <ellipse cx="34" cy="52" rx="3.5" ry="2" fill="#FF9999" opacity="0.7"/>
-                        <ellipse cx="66" cy="52" rx="3.5" ry="2" fill="#FF9999" opacity="0.7"/>
-                    </svg>
+                <div class="avatar" id="burgerAvatar"><div class="status-ring"></div><img src="https://i.imgur.com/l2ql2sy.jpeg" alt="killez"></div>
+                <div class="typewriter-container"><div id="typewriterName"></div></div>
+                <div class="bio"><i class="fas fa-fire"></i> crosshair · slim icon buttons · tap+hold to copy <i class="fas fa-cloud-showers-heavy"></i><br>
+                    <span class="badge-tag" id="discordIdTag"><i class="fab fa-discord"></i> ID: 1105558964495716394</span>
+                    <span class="badge-tag" id="spotifyUserTag"><i class="fab fa-spotify"></i> user: 31adusfvpe3vz5vvyuh2a457rivu</span>
                 </div>
-                <div class="typewriter-container">
-                    <div id="typewriterName"></div>
-                </div>
-                <div class="bio">
-                    <i class="fas fa-fire"></i><i class="fas fa-cloud-showers-heavy"></i><br>
-                    <span class="badge-tag"><i class="fab fa-discord"></i> direct user</span>
-                    <span class="badge-tag"><i class="fab fa-spotify"></i> full player</span>
+                <div class="info-row">
+                    <span><i class="fas fa-clock"></i> <span id="currentDateTime">--:-- --</span></span>
+                    <span><i class="fab fa-discord"></i> <span id="discordStatus">checking...</span></span>
+                    <span><i class="fas fa-eye"></i> <span id="visitorCount">---</span> visits</span>
+                    <span><i class="fas fa-music"></i> <span id="musicStatus">🎧 dark trap</span></span>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 2: LINKS -->
+        <!-- SLIM ICON ONLY BUTTONS -->
         <div class="section-links">
-            <div class="section-title"><i class="fas fa-link"></i> —CONNECTIONS</div>
+            <div class="section-title"><i class="fas fa-link"></i> — DARK CONNECTIONS</div>
             <div class="links-grid">
-                <div class="link-card discord">
-                    <a href="#" class="link-btn" id="discordLink">
-                        <div class="link-left"><i class="fab fa-discord"></i><span>DISCORD · ADD KILLEZ</span></div>
-                        <div class="link-right">ID: 1105558964495716394 <i class="fas fa-arrow-right"></i></div>
-                    </a>
-                </div>
-                <div class="link-card spotify-link">
-                    <a href="#" class="link-btn" id="spotifyProfileLink">
-                        <div class="link-left"><i class="fab fa-spotify"></i><span>SPOTIFY · PROFILE</span></div>
-                        <div class="link-right">user: 31adusfvpe3vz5vvyuh2a457rivu <i class="fas fa-arrow-right"></i></div>
-                    </a>
-                </div>
+                <div class="link-card discord"><a href="#" class="link-btn" id="discordLink"><div class="link-left"><i class="fab fa-discord"></i></div></a></div>
+                <div class="link-card spotify-link"><a href="#" class="link-btn" id="spotifyProfileLink"><div class="link-left"><i class="fab fa-spotify"></i></div></a></div>
             </div>
         </div>
 
-        <!-- SECTION 3: SPOTIFY FULL PLAYER -->
         <div class="section-spotify">
-            <div class="spotify-header">
-                <div><i class="fab fa-spotify" style="color: #1DB954;"></i> <span style="font-weight: 600;">FULL SONIC RITUAL</span></div>
-                <div class="music-type-badge" id="musicTypeBadge"><i class="fas fa-head-side-goggles"></i> DARK TRAP / EMO RAP</div>
-            </div>
-            <div class="spotify-embed">
-                <iframe id="spotifyIframe" 
-                        src="https://open.spotify.com/embed/playlist/6mF785KixssbIecQkMxzgs?utm_source=generator&theme=0" 
-                        width="100%" height="352" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                        loading="lazy">
-                </iframe>
-            </div>
-            <div class="spotify-note">
-                <i class="fas fa-music"></i> full tracks · skip · repeat · unlimited
-            </div>
+            <div class="spotify-header"><div><i class="fab fa-spotify"></i> <span>FULL SPOTIFY PLAYLIST</span></div><div class="music-type-badge"><i class="fas fa-head-side-goggles"></i> DARK TRAP / EMO RAP</div></div>
+            <div class="spotify-embed" id="spotifyEmbedContainer"><div class="skeleton-iframe" id="skeletonLoader"></div><iframe id="spotifyIframe" src="https://open.spotify.com/embed/playlist/6mF785KixssbIecQkMxzgs?utm_source=generator&theme=0" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="display: none;"></iframe></div>
         </div>
-
-        <div class="footer-note">
-            <i class="fas fa-skull"></i> killez · black typography · looping typewriter
-        </div>
+        
+        <div class="footer-note"><i class="fas fa-skull"></i> killez · click gear icon (bottom left) for 16 themes</div>
     </div>
 </div>
 
+<!-- Settings Panel -->
+<div class="settings-panel" id="settingsPanel">
+    <div class="settings-header"><h2><i class="fas fa-palette"></i> THEMES</h2><button class="close-settings" id="closeSettings"><i class="fas fa-times"></i></button></div>
+    <div class="theme-grid" id="themeGrid"></div>
+</div>
+<div class="settings-icon" id="settingsIcon"><i class="fas fa-cog"></i></div>
+<div class="toast" id="toast">Copied!</div>
+
 <script>
     (function() {
-        // ==================== YOUR INFO ====================
-        const DISCORD_USER_ID = "1105558964495716394";
-        const SPOTIFY_USER_ID = "31adusfvpe3vz5vvyuh2a457rivu";
+        const DISCORD_ID = "1105558964495716394";
+        const SPOTIFY_USER = "31adusfvpe3vz5vvyuh2a457rivu";
+        const MY_LINKS = { discord: `https://discord.com/users/${DISCORD_ID}`, spotifyProfile: `https://open.spotify.com/user/${SPOTIFY_USER}` };
         
-        const MY_LINKS = {
-            discord: `https://discord.com/users/${DISCORD_USER_ID}`,
-            spotifyProfile: `https://open.spotify.com/user/${SPOTIFY_USER_ID}`
-        };
+        // Sound effects
+        let audioCtx = null;
+        function playClick() { try { if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain(); osc.connect(gain); gain.connect(audioCtx.destination); osc.frequency.value = 880; gain.gain.value = 0.08; osc.start(); gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.2); osc.stop(audioCtx.currentTime + 0.2); } catch(e){} }
+        function playType() { try { if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain(); osc.connect(gain); gain.connect(audioCtx.destination); osc.frequency.value = 1200; gain.gain.value = 0.04; osc.start(); gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.1); osc.stop(audioCtx.currentTime + 0.1); } catch(e){} }
         
-        // ==================== LOOPING TYPEWRITER EFFECT ====================
-        const nameElement = document.getElementById('typewriterName');
-        const fullName = "KILLEZ";
-        let currentIndex = 0;
-        let typingTimeout = null;
-        let isDeleting = false;
+        // Typewriter
+        const nameEl = document.getElementById('typewriterName');
+        const full = "KILLEZ";
+        let idx = 0, del = false, timer = null;
+        function loop() { if (!del) { if (idx < full.length) { nameEl.textContent = full.substring(0, idx+1); idx++; playType(); timer = setTimeout(loop, 150); } else { del = true; timer = setTimeout(loop, 1500); } } else { if (idx > 0) { nameEl.textContent = full.substring(0, idx-1); idx--; playType(); timer = setTimeout(loop, 100); } else { del = false; timer = setTimeout(loop, 500); } } }
         
-        function loopTypewriter() {
-            if (!isDeleting) {
-                if (currentIndex < fullName.length) {
-                    nameElement.textContent = fullName.substring(0, currentIndex + 1);
-                    currentIndex++;
-                    typingTimeout = setTimeout(loopTypewriter, 150);
-                } else {
-                    isDeleting = true;
-                    typingTimeout = setTimeout(loopTypewriter, 1500);
-                }
-            } else {
-                if (currentIndex > 0) {
-                    nameElement.textContent = fullName.substring(0, currentIndex - 1);
-                    currentIndex--;
-                    typingTimeout = setTimeout(loopTypewriter, 100);
-                } else {
-                    isDeleting = false;
-                    typingTimeout = setTimeout(loopTypewriter, 500);
-                }
-            }
-        }
+        // Skeleton loader
+        const iframe = document.getElementById('spotifyIframe'); const skeleton = document.getElementById('skeletonLoader');
+        iframe.addEventListener('load', () => { skeleton.style.display = 'none'; iframe.style.display = 'block'; });
+        setTimeout(() => { if (iframe.style.display !== 'block') { skeleton.style.display = 'none'; iframe.style.display = 'block'; } }, 3000);
         
-        // Music type
-        const musicBadge = document.getElementById('musicTypeBadge');
-        if (musicBadge) musicBadge.innerHTML = `<i class="fas fa-head-side-goggles"></i> DARK TRAP / EMO RAP`;
+        // Time & Date
+        function updateDateTime() { const now = new Date(); document.getElementById('currentDateTime').textContent = now.toLocaleString(undefined, { hour:'2-digit', minute:'2-digit', second:'2-digit', weekday:'short', month:'short', day:'numeric' }); }
+        setInterval(updateDateTime, 1000); updateDateTime();
         
-        // Burger easter egg
-        const burgerAvatar = document.getElementById('burgerAvatar');
-        if (burgerAvatar) {
-            burgerAvatar.addEventListener('click', () => {
-                alert("🖤 BETTER TYPOGRAPHY EDITION 🖤\nLooping typewriter | Premium fonts\nPure black aesthetic.");
-            });
-        }
+        // Visitor counter
+        let vc = localStorage.getItem('killez_visitor'); vc = vc ? parseInt(vc)+1 : 1; localStorage.setItem('killez_visitor', vc); document.getElementById('visitorCount').textContent = vc;
         
-        // Splash & entrance
-        const splash = document.getElementById('splashScreen');
-        const mainContent = document.getElementById('mainContent');
-        const enterBtn = document.getElementById('enterBtn');
-        const discordLink = document.getElementById('discordLink');
-        const spotifyProfileLink = document.getElementById('spotifyProfileLink');
+        // Discord status
+        const statuses = ["online 🟢", "idle 🌙", "streaming 🎮"];
+        function updateDiscordStatus() { const hour = new Date().getHours(); let idx2 = (hour>=2&&hour<8)?1:(hour>=20&&hour<23)?2:0; document.getElementById('discordStatus').innerHTML = statuses[idx2]; }
+        updateDiscordStatus(); setInterval(updateDiscordStatus, 30000);
         
-        function enterRealm() {
-            splash.style.opacity = '0';
-            splash.style.pointerEvents = 'none';
-            setTimeout(() => {
-                splash.style.display = 'none';
-                mainContent.classList.add('visible');
-                initRainAndCanvas();
-                loopTypewriter();
-                console.log("🖤 KILLEZ BETTER TYPOGRAPHY — LOOPING TYPEWRITER ACTIVE");
-            }, 1000);
-        }
-        enterBtn.addEventListener('click', enterRealm);
+        // Music status
+        const musicStates = ["🎧 dark trap", "🩸 blood ritual", "🌙 emo rap", "🔥 deathstep", "🖤 underground", "🥀 sad melodies"];
+        function updateMusicStatus() { document.getElementById('musicStatus').innerHTML = musicStates[Math.floor(Math.random()*musicStates.length)]; }
+        updateMusicStatus(); setInterval(updateMusicStatus, 20000);
         
-        function openLink(url, platform) {
-            if (!url || url.includes("undefined")) {
-                alert(`⚠️ BLACK WARNING ⚠️\n${platform} link is invalid.\nCheck your ID.`);
-                return false;
-            }
-            window.open(url, '_blank');
-            return true;
-        }
-        if (discordLink) discordLink.addEventListener('click', (e) => { e.preventDefault(); openLink(MY_LINKS.discord, "Discord"); });
-        if (spotifyProfileLink) spotifyProfileLink.addEventListener('click', (e) => { e.preventDefault(); openLink(MY_LINKS.spotifyProfile, "Spotify"); });
+        // Theme management with BETTER ICONS
+        const themesList = ['dark','blood','purple','cyan','ember','neon','crimson','midnight','sakura','gold','ghost','ocean','forest','sunset','matrix','halloween','sorcerer'];
+        const themeIcons = ['🌑','🩸','💜','💠','🔥','💚','🔴','🌙','🌸','👑','👻','🌊','🌲','🌅','💊','🎃','🔮'];
+        const themeNames = ['Dark Void','Blood Moon','Deep Purple','Cyan Dream','Ember','Neon Genesis','Crimson','Midnight','Sakura','Gold','Ghost','Ocean','Forest','Sunset','Matrix','Halloween','Sorcerer'];
+        let currentTheme = 'dark';
+        function setTheme(theme) { if (theme === currentTheme) return; document.body.className = `theme-${theme}`; localStorage.setItem('killez_theme', theme); currentTheme = theme; playClick(); if (window.navigator && window.navigator.vibrate) window.navigator.vibrate(30); }
+        const saved = localStorage.getItem('killez_theme'); if (saved && saved !== 'dark') setTheme(saved); else setTheme('dark');
         
-        // ==================== RAIN EFFECT (black/white) ====================
-        let rainInitialized = false;
-        let canvas, ctx, drops = [];
-        const DROP_COUNT = 500;
-        
-        function resizeCanvas() {
-            if (!canvas) return;
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        function initRainDrops() {
-            if (!canvas) return;
-            drops = [];
-            for (let i = 0; i < DROP_COUNT; i++) {
-                drops.push({
-                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
-                    len: 12 + Math.random() * 28, speed: 3 + Math.random() * 9,
-                    thickness: 0.7 + Math.random() * 1.5, opacity: 0.2 + Math.random() * 0.4,
-                });
-            }
-        }
-        function drawRain() {
-            if (!ctx) return;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let d of drops) {
-                ctx.beginPath();
-                ctx.moveTo(d.x, d.y);
-                ctx.lineTo(d.x, d.y + d.len);
-                ctx.lineWidth = d.thickness;
-                ctx.strokeStyle = `rgba(255, 255, 255, ${d.opacity * 0.5})`;
-                ctx.stroke();
-                d.y += d.speed;
-                if (d.y > canvas.height) { d.y = -d.len; d.x = Math.random() * canvas.width; }
-            }
-            requestAnimationFrame(drawRain);
-        }
-        function initRainAndCanvas() {
-            if (rainInitialized) return;
-            canvas = document.getElementById('rainCanvas');
-            if (!canvas) return;
-            ctx = canvas.getContext('2d');
-            resizeCanvas();
-            initRainDrops();
-            drawRain();
-            window.addEventListener('resize', () => { resizeCanvas(); initRainDrops(); });
-            rainInitialized = true;
-        }
-        
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'class' && mainContent.classList.contains('visible')) {
-                    if (!rainInitialized) initRainAndCanvas();
-                }
-            });
+        // Build theme grid with icons
+        const themeGrid = document.getElementById('themeGrid');
+        themesList.forEach((t, i) => { 
+            const btn = document.createElement('div'); 
+            btn.className = 'theme-option'; 
+            btn.innerHTML = `${themeIcons[i]} ${themeNames[i]}`; 
+            btn.addEventListener('click', (e) => { e.stopPropagation(); setTheme(t); }); 
+            themeGrid.appendChild(btn); 
         });
-        observer.observe(mainContent, { attributes: true });
         
-        console.log("🖤 KILLEZ · BETTER TYPOGRAPHY | DISCORD: 1105558964495716394");
+        // Settings panel toggle
+        const settingsPanel = document.getElementById('settingsPanel'); 
+        const settingsIcon = document.getElementById('settingsIcon'); 
+        const closeSettings = document.getElementById('closeSettings');
+        
+        function openPanel(e) { if(e) e.stopPropagation(); settingsPanel.classList.add('open'); playClick(); }
+        function closePanel(e) { if(e) e.stopPropagation(); settingsPanel.classList.remove('open'); playClick(); }
+        settingsIcon.addEventListener('click', openPanel); 
+        closeSettings.addEventListener('click', closePanel);
+        
+        document.addEventListener('click', (e) => { 
+            if (settingsPanel.classList.contains('open') && !settingsPanel.contains(e.target) && e.target !== settingsIcon) closePanel();
+        });
+        settingsPanel.addEventListener('click', (e) => { e.stopPropagation(); });
+        
+        // Tap and hold to copy
+        let holdTimer = null;
+        function copyToClipboard(text) { navigator.clipboard.writeText(text); const toast = document.getElementById('toast'); toast.textContent = `Copied: ${text}`; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 1500); playClick(); }
+        function startHold(target, text) { holdTimer = setTimeout(() => copyToClipboard(text), 500); }
+        function cancelHold() { if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; } }
+        const discordTag = document.getElementById('discordIdTag'); const spotifyTag = document.getElementById('spotifyUserTag');
+        discordTag.addEventListener('mousedown', () => startHold(discordTag, DISCORD_ID)); discordTag.addEventListener('mouseup', cancelHold); discordTag.addEventListener('mouseleave', cancelHold); discordTag.addEventListener('touchstart', (e) => { e.preventDefault(); startHold(discordTag, DISCORD_ID); }); discordTag.addEventListener('touchend', cancelHold);
+        spotifyTag.addEventListener('mousedown', () => startHold(spotifyTag, SPOTIFY_USER)); spotifyTag.addEventListener('mouseup', cancelHold); spotifyTag.addEventListener('mouseleave', cancelHold); spotifyTag.addEventListener('touchstart', (e) => { e.preventDefault(); startHold(spotifyTag, SPOTIFY_USER); }); spotifyTag.addEventListener('touchend', cancelHold);
+        
+        // Links with sound
+        const discordLink = document.getElementById('discordLink'); const spotifyProfileLink = document.getElementById('spotifyProfileLink');
+        function openLink(url) { if (!url) { alert(`⚠️ Link missing`); return; } playClick(); window.open(url, '_blank'); }
+        discordLink.addEventListener('click', (e) => { e.preventDefault(); openLink(MY_LINKS.discord); });
+        spotifyProfileLink.addEventListener('click', (e) => { e.preventDefault(); openLink(MY_LINKS.spotifyProfile); });
+        
+        // Splash entrance
+        const splash = document.getElementById('splashScreen'); const main = document.getElementById('mainContent'); const enter = document.getElementById('enterBtn');
+        function enterRealm() { splash.classList.add('fade-out'); setTimeout(() => { splash.style.display = 'none'; main.classList.add('visible'); initRain(); loop(); }, 1000); }
+        enter.addEventListener('click', enterRealm);
+        
+        // Rain effect
+        let rainInit = false, canvas, ctx, drops = [];
+        function resizeCanvas() { if(canvas) { canvas.width = window.innerWidth; canvas.height = window.innerHeight; } }
+        function initRainDrops() { if(!canvas) return; drops = []; for(let i=0;i<500;i++) drops.push({ x:Math.random()*canvas.width, y:Math.random()*canvas.height, len:12+Math.random()*30, speed:3+Math.random()*10, thick:0.7+Math.random()*1.6, op:0.2+Math.random()*0.45 }); }
+        function drawRain() { if(!ctx) return; ctx.clearRect(0,0,canvas.width,canvas.height); for(let d of drops) { ctx.beginPath(); ctx.moveTo(d.x,d.y); ctx.lineTo(d.x,d.y+d.len); ctx.lineWidth=d.thick; ctx.strokeStyle=`rgba(200,210,255,${d.op*0.6})`; ctx.stroke(); d.y+=d.speed; if(d.y>canvas.height) { d.y=-d.len; d.x=Math.random()*canvas.width; } } requestAnimationFrame(drawRain); }
+        function initRain() { if(rainInit) return; canvas=document.getElementById('rainCanvas'); if(!canvas) return; ctx=canvas.getContext('2d'); resizeCanvas(); initRainDrops(); drawRain(); window.addEventListener('resize',()=>{ resizeCanvas(); initRainDrops(); }); rainInit=true; }
+        const obs = new MutationObserver((muts) => { muts.forEach((m) => { if(m.attributeName==='class' && main.classList.contains('visible') && !rainInit) initRain(); }); });
+        obs.observe(main, { attributes: true });
+        
+        document.getElementById('burgerAvatar')?.addEventListener('click', () => alert("🖤 BETTER THEME ICONS 🖤\nBlack Spotify embed | 16 unique icons\nClick gear icon (bottom left) for themes"));
+        console.log("✅ SLIM ICONS | 16 THEMES WITH CUSTOM ICONS | BLACK SPOTIFY");
     })();
 </script>
 </body>
